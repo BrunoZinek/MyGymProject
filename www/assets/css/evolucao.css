@@ -1,0 +1,27 @@
+.tblEvolucao{
+    margin: 20px auto
+}
+.medidasGerais{
+    margin: 10px auto;
+}
+.medidasEspecificas{
+    margin: 10px;
+}
+.medidasGerais td, .medidasEspecificas td{
+    width: 60px;
+}
+.medidasGerais td, .medidasGerais th, .medidasGerais tr,
+.medidasEspecificas td, .medidasEspecificas th, .medidasEspecificas tr{
+    border: 1px solid silver;
+}
+.slcEvolucao{
+    margin-top: 10px;
+    display: inline-block;
+}
+.slcEvolucao label{
+    display: block;
+}
+.btnEvol{
+    height: 30px;
+    padding: 5px 15px;
+}

@@ -1,0 +1,33 @@
+table, th{
+    text-align: center
+}
+tr button{
+    padding: initial !important;
+    margin: 0 0 0 20px !important;
+}
+.busca{
+    margin-bottom: -40px;
+    width: 30%;
+    border: none;
+    padding-left: 10px;
+  }
+.card.card-content.table-responsive{
+    margin-top: 2px !important;
+}
+.btn-atualizar, .btn-cadastrar{
+    float: right !important;
+    bottom: -40px
+}
+.disabled {
+    text-decoration: none;
+    color: gray;
+    cursor: default;
+  }
+.card-header{
+    background-color: #14cea6 !important;
+    text-align: left;
+    color: white;
+    vertical-align: middle;
+    margin: -25px -15px !important;
+    padding: 5px !important;
+}

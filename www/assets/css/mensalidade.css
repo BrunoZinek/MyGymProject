@@ -1,0 +1,13 @@
+.validade{
+    margin: 20px;
+}
+
+.planos label{
+    display: block
+}
+.planos .card{
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid rgb(238, 238, 238);
+}

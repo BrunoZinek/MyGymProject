@@ -1,0 +1,21 @@
+.login{
+  width:  300px;
+}
+.wrapper{
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+.logo{
+  max-width: 300px;
+}
+input, .btn-entrar, .btn-senha, .logo, .login-box, .login{
+  margin: auto;
+}
+
+.login-box{
+  border: 1px solid;
+  width: 50%;
+}
+

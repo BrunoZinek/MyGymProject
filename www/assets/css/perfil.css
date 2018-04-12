@@ -1,0 +1,24 @@
+
+.card.card-profile{
+    margin-top: 15px !important;
+}
+.card-avatar{
+    margin: auto !important;
+    width: 75% !important;
+}
+.form-control{
+    margin: auto !important;
+    font-size: 16px !important;
+}
+.email{
+    font-size: 12px !important;
+}
+th{
+    width: 20px;
+}
+.medidas input{
+    text-align: center !important;
+}
+.medidas{
+    margin: 10px;
+}

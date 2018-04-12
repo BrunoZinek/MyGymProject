@@ -1,0 +1,12 @@
+.btn-execucao{
+    width: 200px;
+    padding: 5px;
+    margin: 0 0 10px 20px;
+}
+.btn-cadastrar-exercicio{
+    float: right !important;
+    bottom: -65px
+}
+.exe-exercicio{
+    height: 145px !important;
+}
