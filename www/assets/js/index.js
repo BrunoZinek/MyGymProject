@@ -33,44 +33,9 @@ function enviarSenha() {
 function erroExec() {
   alert("Imagem não cadastrada. Contate um funcionário da academia.")
 }
-function salvarTreino(num) {
-  if (num == 1) {
-    $("#iptSerie1").prop("disabled", true);
-    $("#iptRepeticao1").prop("disabled", true);
-    $("#edit1").show();
-    $("#save1").hide();
-  }
-  if (num == 2) {
-    $("#iptSerie2").prop("disabled", true);
-    $("#iptRepeticao2").prop("disabled", true);
-    $("#edit2").show();
-    $("#save2").hide();
-  }
-  if (num == 3) {
-    $("#iptSerie3").prop("disabled", true);
-    $("#iptRepeticao3").prop("disabled", true);
-    $("#edit3").show();
-    $("#save3").hide();
-  }
-}
-function editarTreino(num) {
-  if (num == 1) {
-    $("#iptSerie1").prop("disabled", false);
-    $("#iptRepeticao1").prop("disabled", false);
-    $("#edit1").hide();
-    $("#save1").show();
-  }
-  if (num == 2) {
-    $("#iptSerie2").prop("disabled", false);
-    $("#iptRepeticao2").prop("disabled", false);
-    $("#edit2").hide();
-    $("#save2").show();
-  }
-  if (num == 3) {
-    $("#iptSerie3").prop("disabled", false);
-    $("#iptRepeticao3").prop("disabled", false);
-    $("#edit3").hide();
-    $("#save3").show();
+function agendarAula(){
+  if(confirm("Deseja agendar Spinning no dia 10/10/2018 às 20:00?")){
+    alert("Aula agendada com sucesso. Caso não possa comparecer, favor avisar a recepção.")
   }
 }
 function editarPerfil() {
