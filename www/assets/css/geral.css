@@ -31,3 +31,30 @@ tr button{
     margin: -25px -15px !important;
     padding: 5px !important;
 }
+
+.spinner{
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+.box-spinner{
+    display: none;
+}
+.loader {
+    margin: auto;
+    border: 10px solid transparent; /* Light grey */
+    border-top: 10px solid #14cea6; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
