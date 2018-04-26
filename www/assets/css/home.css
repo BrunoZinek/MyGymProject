@@ -17,4 +17,11 @@ li{
 }
 .treino-home h4{
     margin: 0;
+    text-transform: capitalize;
+}
+.treino-home{
+    display: none;
+}
+#treinoDia{
+    text-transform: capitalize;
 }
