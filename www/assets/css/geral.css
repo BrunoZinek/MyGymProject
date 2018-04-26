@@ -5,6 +5,9 @@ tr button{
     padding: initial !important;
     margin: 0 0 0 20px !important;
 }
+.sidebar-wrapper .nav li{
+    height: 40px !important;
+}
 .busca{
     margin-bottom: -40px;
     width: 30%;

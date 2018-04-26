@@ -1,5 +1,6 @@
 .login{
   width:  300px;
+  box-shadow: none !important;
 }
 .wrapper{
   position: relative;
@@ -19,3 +20,6 @@ input, .btn-entrar, .btn-senha, .logo, .login-box, .login{
   width: 50%;
 }
 
+#login{
+  background-color: #fff !important;
+}

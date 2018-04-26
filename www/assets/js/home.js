@@ -1,9 +1,9 @@
 $(function () {
     verificarSessao();
     diaSemana();
-    //recuperarTreinoDia();
+    recuperarTreinoDia();
     $('.exibir-exec').click(exibirExec);
-
+    document.addEventListener("backbutton", onBackKeyDown, false);
 });
 
 function recuperarTreinoDia() {
@@ -13,28 +13,28 @@ function recuperarTreinoDia() {
     }
     var tabela = $('#tabela-exercicio')
 
-    $('.box-spinner').show();
+    $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/xfqvb', dados, function (data) {
         $('#treinoDia').text(data[0].titulo + ' e ' + data[1].titulo);
         $('#primeiroTreinoDia').text(data[0].titulo);
         $('#segundoTreinoDia').text(data[0].titulo);
-        for (var i = 0; i < data.length; i++) {
+        /*for (var i = 0; i < data.length; i++) {
             var linha = $('<li>');
             var link = $("<a>").addClass("exibir-exec").attr("href", "#");
             link.append(data[i].exercicio + ' - ' + data[i].serie + ' séries - ' + data[i].repeticoes + ' repetições');
-            link.find('.exibir-exec').click(exibirExec);   
-            linha.append(link); 
+            link.find('.exibir-exec').click(exibirExec);
+            linha.append(link);
             console.log(linha[i].outerHTML);
             console.log(data);
-            tabela.append(linha);     
-        }
+            tabela.append(linha);
+        }*/
     })
         .fail(function () {
             alert('Não foi possível recurar o treino do dia!');
         })
-            .always(function () {
-                $('.box-spinner').toggle();
-            });
+        .always(function () {
+            $('.box-spinner').toggle();
+        })
 }
 
 function diaSemana() {
@@ -54,4 +54,8 @@ function diaSemana() {
 
 function exibirExec() {
     console.log('foi');
-  }
+}
+
+function onBackKeyDown() {
+    navigator.app.exitApp();
+}
