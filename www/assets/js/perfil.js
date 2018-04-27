@@ -49,6 +49,7 @@ function editarPerfil() {
     $("#iptDtNasc").prop("disabled", false);
     $('#iptEmail').removeClass('disabled');
     $("#uploadFoto").prop("disabled", false);
+    $("#camera").show();
     $("#iptEmail").prop("disabled", false);
     $('#btnEditar').hide();
     $('#btnSalvar').show();
@@ -62,8 +63,8 @@ function salvarPerfil() {
         email: $("#iptEmail").val(),
         foto: $("#avatar").attr('src'),
     }
-    $.post('asd', dados, function (data) {
-        if (data.retorno == 1) {
+    $.post('', dados, function (data) {
+        if (data.autenticado == 1) {
             alert('Dados alterados com sucesso');
             $("#iptNome").prop("disabled", true);
             $("#iptDtNasc").prop("disabled", true);

@@ -1,0 +1,42 @@
+[
+    {
+        "grupo": "peito",
+        "treino": [
+            {
+                "titulo": "Supino Reto",
+                "serie": "3",
+                "repeticao": "15"
+            },
+            {
+                "titulo": "Supino Inclinado",
+                "serie": "3",
+                "repeticao": "15"
+            },
+            {
+                "titulo": "Supino Declinado",
+                "serie": "3",
+                "repeticao": "15"
+            }
+        ]
+    },
+    {
+        "grupo": "biceps",
+        "treino": [
+            {
+                "titulo": "Rosca Direta",
+                "serie": "3",
+                "repeticao": "10"
+            },
+            {
+                "titulo": "Rosca Corda",
+                "serie": "3",
+                "repeticao": "10"
+            },
+            {
+                "titulo": "Scott",
+                "serie": "3",
+                "repeticao": "12"
+            }
+        ]
+    }
+]
