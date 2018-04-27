@@ -102,8 +102,9 @@
                                     <tr>
                                         <td rowspan="3" style="width:30%">
                                             <div class="card-avatar">
-                                                <a href="">
-                                                    <img class="img" width="80px" src="../assets/img/faces/padrao.jpg" />
+                                                <a href="#">
+                                                    <input id="uploadFoto" type="file" disabled>
+                                                    <img class="img" id="avatar" width="80px" src="../assets/img/faces/padrao.jpg"/>
                                                 </a>
                                             </div>
                                         </td>
@@ -111,7 +112,7 @@
                                             <label>Nome:</label>
                                         </th>
                                         <td>
-                                            <input id="iptNome" type="text" class="form-control" disabled>
+                                            <input id="iptNome" type="text" class="form-control disabled" disabled>
                                         </td>
                                     </tr>
                                     <tr>
@@ -119,7 +120,7 @@
                                             <label>Dt de Nasc.:</label>
                                         </th>
                                         <td>
-                                            <input id="iptDtNasc" type="text"  class="form-control" disabled>
+                                            <input id="iptDtNasc" type="text"  class="form-control disabled" disabled>
                                         </td>
                                     </tr>
                                     <tr>
@@ -127,23 +128,23 @@
                                             <label>Email:</label>
                                         </th>
                                         <td>
-                                            <input id="iptEmail" type="text" class="form-control email" disabled>
+                                            <input id="iptEmail" type="text" class="form-control email disabled" disabled>
                                         </td>
                                     </tr>
                                 </table>
-                                <table class="medidas">
+                                <table class="table medidas">
                                     <tr>
                                         <th>
                                             <label>Altura:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="1,77" class="form-control" disabled>
+                                            <span id="altura">
                                         </td>
                                         <th>
                                             <label>Peso:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="100" class="form-control" disabled>
+                                            <span id="peso">
                                         </td>
                                     </tr>
                                     <tr>
@@ -151,13 +152,13 @@
                                             <label>IMC:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="imc">
                                         </td>
                                         <th>
                                             <label>Gordura:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="gordura">
                                         </td>
                                     </tr>
                                     <tr>
@@ -174,13 +175,13 @@
                                             <label>Biceps:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="1,77" class="form-control" disabled>
+                                            <span id="biceps">
                                         </td>
                                         <th>
                                             <label>Antebraço:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="100" class="form-control" disabled>
+                                            <span id="antebraco">
                                         </td>
                                     </tr>
                                     <tr>
@@ -188,13 +189,13 @@
                                             <label>Peito:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="peito">
                                         </td>
                                         <th>
                                             <label>Abdomen:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="abdomen">
                                         </td>
                                     </tr>
                                     <tr>
@@ -202,13 +203,13 @@
                                             <label>Quadril:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="1,77" class="form-control" disabled>
+                                            <span id="quadril">
                                         </td>
                                         <th>
                                             <label>Panturrilha:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="100" class="form-control" disabled>
+                                            <span id="panturrilha">
                                         </td>
                                     </tr>
                                     <tr>
@@ -216,13 +217,13 @@
                                             <label>Coxa:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="coxa">
                                         </td>
                                         <th>
                                             <label>Pescoço:</label>
                                         </th>
                                         <td>
-                                            <input type="text" value="20" class="form-control" disabled>
+                                            <span id="pescoco">
                                         </td>
                                     </tr>
                                     <tr>
@@ -230,12 +231,12 @@
                                             <label>Data de Matrícula:</label>
                                         </td>
                                         <td colspan="2">
-                                            <input type="text" value="01/01/2018" class="form-control" disabled>
+                                            <span id="dtMatric">
                                         </td>
                                     </tr>
                                 </table>
-                                <button id="btnEditar" type="button" class="btn btn-primary" onclick="editarPerfil()">EDITAR</button>
-                                <button id="btnSalvar" type="button" class="btn btn-primary" onclick="salvarPerfil()" style="display:none">SALVAR</button>
+                                <button id="btnEditar" type="button" class="btn btn-primary" >EDITAR</button>
+                                <button id="btnSalvar" type="button" class="btn btn-primary" style="display:none">SALVAR</button>
                                 <button id="btnSenha" type="button" class="btn btn-primary" onclick="window.location.href='alterar_senha.html'">ALTERAR SENHA</button>
                             </div>
                         </div>
@@ -265,6 +266,6 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
 <!-- Scripts -->
-<script type="text/javascript" src="../assets/js/index.js"></script>
+<script type="text/javascript" src="../assets/js/geral.js"></script>
 <script type="text/javascript" src="../assets/js/perfil.js"></script>
 </html>

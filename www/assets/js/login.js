@@ -1,4 +1,5 @@
 $(function () {
+    $.ajaxSetup({timeout:10000});
     // Logar
     $('#entrar').click(function () {
         if (!$('#user').val() || !$('#password').val()) {

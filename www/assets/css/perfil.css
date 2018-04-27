@@ -16,9 +16,29 @@
 th{
     width: 20px;
 }
-.medidas input{
-    text-align: center !important;
+.medidas tr,.medidas td,.medidas th{
+   border: none !important;
+   height: 35px !important;
+   padding: 0 !important;
+}
+.medidas tr,.medidas td,.medidas th{
+    width: 75px !important;
 }
 .medidas{
     margin: 10px;
+    width: 95% !important;
+}
+.disabled{
+    background-color: #f1f1f1 !important;
+}
+span{
+    font-size: 15px;
+    font-weight: bolder;
+}
+#uploadFoto{
+    z-index: 1;
+    width: 60px;
+    height: 50px;
+    top: 7%;
+    left: 6%;
 }
