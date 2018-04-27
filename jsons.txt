@@ -1,0 +1,2 @@
+usuario: https://api.myjson.com/bins/dp8xr
+exercicios: https://api.myjson.com/bins/13411b

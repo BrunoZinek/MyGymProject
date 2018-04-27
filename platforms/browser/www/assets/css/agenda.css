@@ -1,0 +1,12 @@
+.modalidade{
+    margin: 20px;
+}
+.modalidade label{
+    display: block;
+}
+.data{
+    margin: 20px;
+}
+.data label{
+    display: block;
+}

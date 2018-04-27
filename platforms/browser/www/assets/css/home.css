@@ -1,0 +1,27 @@
+.card.card-profile{
+    margin-top: 15px !important;
+}
+.card-avatar{
+    margin: 10px -40px 0 10px !important;
+}
+h4{
+    color: #14cea6
+}
+li{
+    list-style-type: none;
+}
+.exercicios-home{
+    border: 1px solid silver;
+    margin: 0 10px 10px 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.125)
+}
+.treino-home h4{
+    margin: 0;
+    text-transform: capitalize;
+}
+.treino-home{
+    display: none;
+}
+#treinoDia{
+    text-transform: capitalize;
+}
