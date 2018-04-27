@@ -1,9 +1,13 @@
 $(function () {
-    $.ajaxSetup({timeout:10000});
+    $.ajaxSetup({ timeout: 10000 });
     verificarSessao();
     recuperarPerfil();
     $('#btnEditar').click(editarPerfil);
     $('#btnSalvar').click(salvarPerfil);
+    $('#btnSalvar').click(salvarPerfil);
+    $('#btnAltSenha').click(function () {
+        window.location.href = 'alterar_senha.html';
+    });
     $(document).on("change", "#uploadFoto", function (e) {
         trocarFoto(this.files);
     });
@@ -39,7 +43,6 @@ function recuperarPerfil() {
 }
 
 function editarPerfil() {
-    $('#avatar').attr('src', '../assets/img/faces/padrao.jpg');
     $('#iptNome').removeClass('disabled');
     $("#iptNome").prop("disabled", false);
     $('#iptDtNasc').removeClass('disabled');
@@ -54,10 +57,10 @@ function editarPerfil() {
 function salvarPerfil() {
     $('.box-spinner').toggle();
     var dados = {
-        nome :  $("#iptNome").val(),
-        dtNasc :  $("#iptDtNasc").val(),
-        email :  $("#iptEmail").val(),
-        foto :  $("#avatar").attr('src'),
+        nome: $("#iptNome").val(),
+        dtNasc: $("#iptDtNasc").val(),
+        email: $("#iptEmail").val(),
+        foto: $("#avatar").attr('src'),
     }
     $.post('asd', dados, function (data) {
         if (data.retorno == 1) {
@@ -67,7 +70,7 @@ function salvarPerfil() {
             $("#iptEmail").prop("disabled", true);
             $("#btnSalvar").hide();
             $("#btnEditar").show();
-        }else{
+        } else {
             alert('Não foi possivel atualizar os dados. Tente novamente mais tarde');
         }
     })

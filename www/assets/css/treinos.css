@@ -1,6 +1,7 @@
 .treino-detail {
     display: block;
     border: 1px solid #CCC;
+    max-width: 300px;
 }
 
 li {
@@ -18,4 +19,7 @@ li {
     height: 30px;
     width: 130px;
     margin: 10px auto!important;
+}
+.active{
+    border:1px solid black !important;
 }

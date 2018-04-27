@@ -48,49 +48,24 @@ function recuperarSenha() {
     }
 }
 
-function alterarSenha() {
-    alert("Senha alterada com sucesso");
-    window.location.href = "home.html";
+function diaSemana() {
+    var hoje = new Date();
+    var dia = hoje.getDay();
+    var semana = new Array(6);
+    semana[0] = 'Domingo';
+    semana[1] = 'Segunda-Feira';
+    semana[2] = 'Terça-Feira';
+    semana[3] = 'Quarta-Feira';
+    semana[4] = 'Quinta-Feira';
+    semana[5] = 'Sexta-Feira';
+    semana[6] = 'Sábado';
+    $('#diaSemana').text(semana[dia]);
+    return semana[dia];
 }
 
 
 
-function detalhes(num) {
-    $.ajax({
-        url: "",
-        type: 'POST',
-        contentType: 'application/json',
-        data: ({
-        }),
-        success: function () {
-            alert("Senha enviada para o celular/email informado")
-        }
-    });
-    /*switch (num) {
-      case 1:
-        $("#1").slideToggle();
-        break;
-      case 2:
-        $("#2").slideToggle();
-        break;
-      case 3:
-        $("#3").slideToggle();
-        break;
-      case 4:
-        $("#4").slideToggle();
-        break;
-      case 5:
-        $("#5").slideToggle();
-        break;
-      case 6:
-        $("#6").slideToggle();
-        break;
-      case 7:
-        $("#7").slideToggle();
-        break;
-      default:
-    }*/
-}
+
 function exibirEvol() {
     $("#divEvol").slideToggle();
 }

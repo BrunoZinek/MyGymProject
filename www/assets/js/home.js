@@ -13,8 +13,7 @@ function recuperarTreinoDia() {
         login: window.localStorage.getItem('login'),
         senha: window.localStorage.getItem('senha')
     }
-
-    $('.box-spinner').toggle();
+    $('.box-spinner').toggle(); 
     $.get('https://api.myjson.com/bins/13411b', dados, function (data) {
         if (data.length > 0) {
             $('.treino-home').show();
@@ -27,7 +26,7 @@ function recuperarTreinoDia() {
                     var linha = $('<li>');
                     var link = $("<a>").addClass("exibir-exec").attr("href", "#");
                     link.append(data[j].treino[i].titulo + ' - ' + data[j].treino[i].serie + ' séries - ' + data[j].treino[i].repeticao + ' repetições');
-                    link.find('.exibir-exec').click(exibirExec);
+                    link.click(exibirExec);
                     linha.append(link);
                     tabela.append(linha);
                 });
@@ -45,20 +44,6 @@ function recuperarTreinoDia() {
         })
 }
 
-function diaSemana() {
-    var hoje = new Date();
-    var dia = hoje.getDay();
-    var semana = new Array(6);
-    semana[0] = 'Domingo';
-    semana[1] = 'Segunda-Feira';
-    semana[2] = 'Terça-Feira';
-    semana[3] = 'Quarta-Feira';
-    semana[4] = 'Quinta-Feira';
-    semana[5] = 'Sexta-Feira';
-    semana[6] = 'Sábado';
-    $('#diaSemana').text(semana[dia]);
-}
-
 function recuperarFoto() {
     $.get('https://api.myjson.com/bins/dp8xr', function (data) {
         $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
@@ -66,7 +51,7 @@ function recuperarFoto() {
 }
 
 function exibirExec() {
-    console.log('foi');
+    window.location.href="execucoes.html";
 }
 
 function onBackKeyDown() {

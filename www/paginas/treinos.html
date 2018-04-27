@@ -24,13 +24,13 @@
 </head>
 
 <body>
-     <!-- Spinner -->
-     <div class="box-spinner">
-            <div class="spinner">
-                <div class="loader"></div>
-            </div>
+    <!-- Spinner -->
+    <div class="box-spinner">
+        <div class="spinner">
+            <div class="loader"></div>
         </div>
-        <!-- Fim Spinner -->
+    </div>
+    <!-- Fim Spinner -->
     <div class="wrapper">
         <!--INICIO DA BARRA LATERAL-->
         <div class="sidebar" data-color="aqua" data-image="../assets/img/sidebar-1.jpg">
@@ -78,6 +78,12 @@
                             <p>SOBRE</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="#" onclick="sair()">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>LOGOUT</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!--FIM DO MENU-->
@@ -106,134 +112,57 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(1)">SEGUNDA-FEIRA</button>
-                                            <div id="1" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnSegunda" type="button" class="btn btn-primary">SEGUNDA-FEIRA</button>
+                                            <div id="treinoSegunda" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio1"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(2)">TERÇA-FEIRA</button>
-                                            <div id="2" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnTerca" type="button" class="btn btn-primary">TERÇA-FEIRA</button>
+                                            <div id="treinoTerca" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio2"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(3)">QUARTA-FEIRA</button>
-                                            <div id="3" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnQuarta" type="button" class="btn btn-primary">QUARTA-FEIRA</button>
+                                            <div id="treinoQuarta" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio3"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(4)">QUINTA-FEIRA</button>
-                                            <div id="4" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnQuinta" type="button" class="btn btn-primary">QUINTA-FEIRA</button>
+                                            <div id="treinoQuinta" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio4"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(5)">SEXTA-FEIRA</button>
-                                            <div id="5" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnSexta" type="button" class="btn btn-primary">SEXTA-FEIRA</button>
+                                            <div id="treinoSexta" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio5"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(6)">SÁBADO</button>
-                                            <div id="6" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnSabado" type="button" class="btn btn-primary">SÁBADO</button>
+                                            <div id="treinoSabado" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio6"></ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button id="btnSegunda" type="button" class="btn btn-primary" onclick="detalhes(7)">DOMINGO</button>
-                                            <div id="7" style="display:none" class="treino-detail">
-                                                <li>
-                                                    Supino Reto - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Inclinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    Supino Declinado - 3 séries - 15 repetições
-                                                </li>
-                                                <li>
-                                                    CrossOver - 3 séries - 15 repetições
-                                                </li>
+                                            <button id="btnDomingo" type="button" class="btn btn-primary">DOMINGO</button>
+                                            <div id="treinoDomingo" style="display:none" class="treino-detail">
+                                                <ul class="nav" id="tabela-exercicio7"></ul>
                                             </div>
                                         </td>
                                     </tr>
@@ -269,4 +198,6 @@
 <script src="../assets/js/demo.js"></script>
 <!-- Scripts -->
 <script type="text/javascript" src="../assets/js/geral.js"></script>
+<script type="text/javascript" src="../assets/js/treinos.js"></script>
+
 </html>

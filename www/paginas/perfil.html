@@ -78,6 +78,12 @@
                             <p>SOBRE</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="#" onclick="sair()">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>LOGOUT</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!--FIM DO MENU-->
@@ -103,8 +109,8 @@
                                         <td rowspan="3" style="width:30%">
                                             <div class="card-avatar">
                                                 <a href="#">
-                                                    <input id="uploadFoto" type="file" disabled>
-                                                    <img class="img" id="avatar" width="80px" src="../assets/img/faces/padrao.jpg"/>
+                                                    <input id="uploadFoto" type="file" accept=".jpg" disabled>
+                                                    <img class="img" id="avatar" width="80px"/>
                                                 </a>
                                             </div>
                                         </td>
@@ -237,7 +243,7 @@
                                 </table>
                                 <button id="btnEditar" type="button" class="btn btn-primary" >EDITAR</button>
                                 <button id="btnSalvar" type="button" class="btn btn-primary" style="display:none">SALVAR</button>
-                                <button id="btnSenha" type="button" class="btn btn-primary" onclick="window.location.href='alterar_senha.html'">ALTERAR SENHA</button>
+                                <button id="btnAltSenha" type="button" class="btn btn-primary" >ALTERAR SENHA</button>
                             </div>
                         </div>
                     </div>
