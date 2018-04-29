@@ -15,7 +15,7 @@ $(function () {
 
 function recuperarPerfil() {
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/dp8xr', function (data) {
+    $.get('https://api.myjson.com/bins/avb6n', function (data) {
         $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
         $('#iptNome').attr('value', data[0].nome);
         $('#iptDtNasc').attr('value', data[0].dtNasc);

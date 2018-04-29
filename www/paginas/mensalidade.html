@@ -23,13 +23,13 @@
 </head>
 
 <body>
-     <!-- Spinner -->
-     <div class="box-spinner">
-            <div class="spinner">
-                <div class="loader"></div>
-            </div>
+    <!-- Spinner -->
+    <div class="box-spinner">
+        <div class="spinner">
+            <div class="loader"></div>
         </div>
-        <!-- Fim Spinner -->
+    </div>
+    <!-- Fim Spinner -->
     <div class="wrapper">
         <!--INICIO DA BARRA LATERAL-->
         <div class="sidebar" data-color="aqua" data-image="../assets/img/sidebar-1.jpg">
@@ -106,48 +106,14 @@
                             <div class="card card-profile">
                                 <div class="validade">
                                     <label>Validade:</label>
-                                    <span>10/10/2019</span>
+                                    <span id="dtValidade"></span>
+                                    <span id="vencido" style="display: none">Vencido</span>
                                 </div>
                                 <div class="planos">
                                     <label>
                                         <h2>Planos</h2>
                                     </label>
-                                    <a href="#" onclick="redirectPag()">
-                                        <div class="card">
-                                            <label>
-                                                <h4>Musculação Easy</h4>
-                                            </label>
-                                            <span>Pacote básico de musculação</span>
-                                            </label>
-                                            <label>
-                                                <h4>R$ 60,00</h4>
-                                            </label>
-                                        </div>
-                                    </a>
-                                    <a href="#" onclick="redirectPag()">
-                                        <div class="card">
-                                            <label>
-                                                <h4>Musculação Medium</h4>
-                                            </label>
-                                            <span>Pacote musculação com acompanhamento individual</span>
-                                            </label>
-                                            <label>
-                                                <h4>R$ 100,00</h4>
-                                            </label>
-                                        </div>
-                                    </a>
-                                    <a href="#" onclick="redirectPag()">
-                                        <div class="card">
-                                            <label>
-                                                <h4>Musculação Hard</h4>
-                                            </label>
-                                            <span>Pacote musculação com acompanhamento individual de treino e alimentação</span>
-                                            </label>
-                                            <label>
-                                                <h4>R$ 170,00</h4>
-                                            </label>
-                                        </div>
-                                    </a>
+                                    <div id="boxPlano"></div>
                                 </div>
                             </div>
                         </div>
@@ -179,4 +145,6 @@
 <script src="../assets/js/demo.js"></script>
 <!-- Scripts -->
 <script type="text/javascript" src="../assets/js/geral.js"></script>
+<script type="text/javascript" src="../assets/js/planos.js"></script>
+
 </html>

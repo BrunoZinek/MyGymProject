@@ -1,0 +1,30 @@
+[
+    {
+        "id_aula":"01",
+        "data":"29/04/2018",
+        "modalidade":"Spinning",
+        "horario":"20:00",
+        "professor":"Fulano"
+    },
+    {
+        "id_aula":"01",
+        "data":"30/04/2018",
+        "modalidade":"Capoeira",
+        "horario":"20:00",
+        "professor":"Ciclano"
+    },
+    {
+        "id_aula":"01",
+        "data":"01/05/2018",
+        "modalidade":"Kung-Fu",
+        "horario":"20:00",
+        "professor":"Fulano"
+    },
+    {
+        "id_aula":"01",
+        "data":"02/05/2018",
+        "modalidade":"Boxe",
+        "horario":"20:00",
+        "professor":"Ciclano"
+    }
+]

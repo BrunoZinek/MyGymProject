@@ -1,0 +1,23 @@
+[
+    {
+        "id_plano":"01",
+        "titulo":"Musculação Easy",
+        "descricao":"Pacote básico de musculação",
+        "preco":"60",
+        "validade":"30"
+    },
+    {
+        "id_plano":"02",
+        "titulo":"Musculação Medium",
+        "descricao":"Pacote musculação com acompanhamento individual",
+        "preco":"100",
+        "validade":"30"
+    },
+    {
+        "id_plano":"03",
+        "titulo":"Musculação Hard",
+        "descricao":"Pacote musculação com acompanhamento individual de treino e alimentação",
+        "preco":"170",
+        "validade":"30"
+    }
+]

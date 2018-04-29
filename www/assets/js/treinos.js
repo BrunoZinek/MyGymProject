@@ -41,7 +41,7 @@ function recuperarTreinoDia() {
                 var exercicio = data[i];
                 var tabela = $('#tabela-exercicio' + (i+1))
                 if(exercicio){
-                    $(exercicio.treino).each(function (naouso,treino) {
+                    $(exercicio.treino).each(function (index,treino) {
                         var linha = $('<li>');
                         linha.append(treino.titulo + ' - ' + treino.serie + ' séries - ' + treino.repeticao + ' repetições');
                         tabela.append(linha);

@@ -27,6 +27,10 @@ function voltar() {
     window.history.back();
 }
 
+function home() {
+    window.location.href = "home.html";
+}
+
 function recuperarSenha() {
     var login = $('#login').val();
     if (!login) {
@@ -62,9 +66,6 @@ function diaSemana() {
     $('#diaSemana').text(semana[dia]);
     return semana[dia];
 }
-
-
-
 
 function exibirEvol() {
     $("#divEvol").slideToggle();

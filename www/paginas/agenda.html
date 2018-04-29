@@ -19,17 +19,17 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-    
+
 </head>
 
 <body>
-     <!-- Spinner -->
-     <div class="box-spinner">
-            <div class="spinner">
-                <div class="loader"></div>
-            </div>
+    <!-- Spinner -->
+    <div class="box-spinner">
+        <div class="spinner">
+            <div class="loader"></div>
         </div>
-        <!-- Fim Spinner -->
+    </div>
+    <!-- Fim Spinner -->
     <div class="wrapper">
         <!--INICIO DA BARRA LATERAL-->
         <div class="sidebar" data-color="aqua" data-image="../assets/img/sidebar-1.jpg">
@@ -106,21 +106,13 @@
                             <div class="card card-profile">
                                 <div class="modalidade">
                                     <label> Modalidade:</label>
-
-                                    <select class="slcModalidade">
-                                        <option value="0">Selecione</option>
-                                        <option value="1">Spinning</option>
-                                        <option value="2">Muay Thai</option>
-                                        <option value="3">Capoeira</option>
-                                    </select>
+                                    <select class="slcModalidade" id="slcModalidade"></select>
                                 </div>
                                 <div class="data">
                                     <label> Data:</label>
-
-                                    <input type="date">
+                                    <input type="date" id="dataBusca">
                                 </div>
-                                <button id="btnConfirmar" type="button" class="btn btn-primary" onclick="exibirAulas()">CONFIRMAR</button>
-
+                                <button id="btnConfirmar" type="button" class="btn btn-primary">CONFIRMAR</button>
                             </div>
                         </div>
                     </div>
@@ -151,4 +143,6 @@
 <script src="../assets/js/demo.js"></script>
 <!-- Scripts -->
 <script type="text/javascript" src="../assets/js/geral.js"></script>
+<script type="text/javascript" src="../assets/js/aulas.js"></script>
+
 </html>
