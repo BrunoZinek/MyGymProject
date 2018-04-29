@@ -10,6 +10,7 @@ $(function () {
     });
     $(document).on("change", "#uploadFoto", function (e) {
         trocarFoto(this.files);
+        
     });
 })
 
@@ -82,18 +83,6 @@ function salvarPerfil() {
             $('.box-spinner').toggle();
         })
 
-
-
-    $.ajax({
-        url: "",
-        type: 'POST',
-        contentType: 'application/json',
-        data: ({
-        }),
-        success: function () {
-            alert("Senha enviada para o celular/email informado")
-        }
-    });
     /*  $("#iptNome").prop("disabled", true);
     $("#iptDtNasc").prop("disabled", true);
     $("#iptEmail").prop("disabled", true);

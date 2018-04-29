@@ -1,6 +1,7 @@
 [
     {
         "idUsuario": "01",
+        "login":"bruno",
         "nome": "Bruno Paulino Zinek",
         "dtNasc": "29/06/1989",
         "email": "brunozinek@outlook.com",
