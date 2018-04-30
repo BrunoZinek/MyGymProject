@@ -23,13 +23,13 @@
 </head>
 
 <body>
-     <!-- Spinner -->
-     <div class="box-spinner">
-            <div class="spinner">
-                <div class="loader"></div>
-            </div>
+    <!-- Spinner -->
+    <div class="box-spinner">
+        <div class="spinner">
+            <div class="loader"></div>
         </div>
-        <!-- Fim Spinner -->
+    </div>
+    <!-- Fim Spinner -->
     <div class="wrapper">
         <!--INICIO DA BARRA LATERAL-->
         <div class="sidebar" data-color="aqua" data-image="../assets/img/sidebar-1.jpg">
@@ -105,15 +105,24 @@
                             </div>
                             <div class="card card-profile">
                                 <div class="slcEvolucao">
-                                    <label> Período</label>
-                                    <select>
-                                        <option value="0">Selecione</option>
-                                        <option value="1">Trimestral</option>
-                                        <option value="2">Semestral</option>
-                                        <option value="3">Anual</option>
-                                    </select>
+                                    <label>
+                                        <h3>Período</h3>
+                                    </label>
+                                    <div id="inicio">
+
+                                        <label from="dtInicio">Data Inicial:</label>
+                                        <select id="dtInicio">
+                                            <option value="" disabled selected></option>
+                                        </select>
+                                    </div>
+                                    <div id="fim">
+                                        <label from="dtFim">Data Final:</label>
+                                        <select id="dtFim" disabled>
+                                            <option value="" disabled selected></option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-primary btnEvol" onclick="exibirEvol()">OK</button>
+                                <button type="button" class="btn btn-primary btnEvol" id="buscarEvolucao">OK</button>
                                 <table class="tblEvolucao">
                                     <tr>
                                         <td>
@@ -132,28 +141,20 @@
                                                             <label>Inicial:</label>
                                                         </td>
                                                         <td>
-                                                            <label>Atual:</label>
+                                                            <label>Final:</label>
                                                         </td>
                                                         <td>
                                                             <label>Inicial:</label>
                                                         </td>
                                                         <td>
-                                                            <label>Atual:</label>
+                                                            <label>Final:</label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
+                                                        <td id="inicial1"></td>
+                                                        <td id="final1"></td>
+                                                        <td id="inicial2"></td>
+                                                        <td id="final2"></td>
                                                     </tr>
                                                     <tr>
                                                         <th colspan="2">
@@ -168,41 +169,72 @@
                                                             <label>Inicial:</label>
                                                         </td>
                                                         <td>
-                                                            <label>Atual:</label>
+                                                            <label>Final:</label>
                                                         </td>
                                                         <td>
                                                             <label>Inicial:</label>
                                                         </td>
                                                         <td>
-                                                            <label>Atual:</label>
+                                                            <label>Final:</label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
+                                                        <td id="inicial3"></td>
+                                                        <td id="final3"></td>
+                                                        <td id="inicial4"></td>
+                                                        <td id="final4"></td>
                                                     </tr>
 
                                                 </table>
                                                 <table class="medidasEspecificas">
                                                     <tr>
                                                         <th colspan="2">
-                                                            <label>Altura:</label>
+                                                            <label>Biceps:</label>
                                                         </th>
                                                         <th colspan="2">
-                                                            <label>Peso:</label>
+                                                            <label>Antebraço:</label>
                                                         </th>
                                                         <th colspan="2">
-                                                            <label>Peso:</label>
+                                                            <label>Peito:</label>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label>Inicial:</label>
+                                                        </td>
+                                                        <td>
+                                                            <label>Final:</label>
+                                                        </td>
+                                                        <td>
+                                                            <label>Inicial:</label>
+                                                        </td>
+                                                        <td>
+                                                            <label>Final:</label>
+                                                        </td>
+                                                        <td>
+                                                            <label>Inicial:</label>
+                                                        </td>
+                                                        <td>
+                                                            <label>Final:</label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="inicial5"></td>
+                                                        <td id="final5"></td>
+                                                        <td id="inicial6"></td>
+                                                        <td id="final6"></td>
+                                                        <td id="inicial7"></td>
+                                                        <td id="final7"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <label>Abdomen:</label>
+                                                        </th>
+                                                        <th colspan="2">
+                                                            <label>Quadril:</label>
+                                                        </th>
+                                                        <th colspan="2">
+                                                            <label>Panturrilha:</label>
                                                         </th>
                                                     </tr>
                                                     <tr>
@@ -226,43 +258,24 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
+                                                        <td id="inicial8"></td>
+                                                        <td id="final8"></td>
+                                                        <td id="inicial9"></td>
+                                                        <td id="final9"></td>
+                                                        <td id="inicial10"></td>
+                                                        <td id="final10"></td>
                                                     </tr>
                                                     <tr>
+                                                        <th class="vazio"></th>
                                                         <th colspan="2">
-                                                            <label>IMC:</label>
+                                                            <label>Coxa:</label>
                                                         </th>
                                                         <th colspan="2">
-                                                            <label>Gordura:</label>
-                                                        </th>
-                                                        <th colspan="2">
-                                                            <label>Gordura:</label>
+                                                            <label>Pescoço:</label>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            <label>Inicial:</label>
-                                                        </td>
-                                                        <td>
-                                                            <label>Atual:</label>
-                                                        </td>
+                                                        <td class="vazio"></td>
                                                         <td>
                                                             <label>Inicial:</label>
                                                         </td>
@@ -277,24 +290,11 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
-                                                        <td>
-                                                            x
-                                                        </td>
-                                                        <td>
-                                                            y
-                                                        </td>
+                                                        <td class="vazio"></td>
+                                                        <td id="inicial11"></td>
+                                                        <td id="final11"></td>
+                                                        <td id="inicial12"></td>
+                                                        <td id="final12"></td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -307,6 +307,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>
@@ -330,4 +331,6 @@
 <script src="../assets/js/demo.js"></script>
 <!-- Scripts -->
 <script type="text/javascript" src="../assets/js/geral.js"></script>
+<script type="text/javascript" src="../assets/js/evolucao.js"></script>
+
 </html>

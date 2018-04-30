@@ -16,12 +16,34 @@
 }
 .slcEvolucao{
     margin-top: 10px;
-    display: inline-block;
+    margin-bottom: 0;
+}
+.slcEvolucao h3{
+    margin: 0 0 -15px 0;
+}
+
+.slcEvolucao div{
+    float: left;
+    margin: 15px 20px;
+}
+.slcEvolucao select{
+    width: 125px;
 }
 .slcEvolucao label{
-    display: block;
+    display: block !important;
 }
-.btnEvol{
+.slcEvolucao #inicio, slcEvolucao #fim{
+    display: inline-block;
+}
+
+#buscarEvolucao{
+    display: block;
+    margin: 10px auto;
     height: 30px;
     padding: 5px 15px;
+}
+
+.vazio{
+    border-bottom: 1px solid white  !important;
+    border-left: 1px solid white  !important;
 }
