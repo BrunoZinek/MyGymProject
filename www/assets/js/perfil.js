@@ -10,7 +10,7 @@ $(function () {
     });
     $(document).on("change", "#uploadFoto", function (e) {
         trocarFoto(this.files);
-        
+
     });
 })
 
@@ -94,7 +94,21 @@ function trocarFoto(foto) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#avatar').attr('src', e.target.result);
+            var image = new Image();
+            image.src = e.target.result;            
+            image.onload = function () { 
+                var tamanho = foto[0].size;                             
+                var height = this.height;
+                var width = this.width;
+                if(tamanho > 100000){
+                    alert("Favor selecionar uma imagem com no máximo 100kb");
+                }else if (height > 400 || width > 400) {
+                    alert("Favor selecionar uma imagem com resolução maxima de 400x400");
+                } else {
+                    $('#avatar').attr('src', e.target.result);
+                }
+            };
+
         }
 
         reader.readAsDataURL(foto[0]);
