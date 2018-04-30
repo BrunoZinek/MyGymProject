@@ -44,17 +44,23 @@ span {
     font-weight: bolder;
 }
 
-#uploadFoto, #camera {
+#uploadFoto {
     position: absolute;
-    width: 60px;
-    height: 50px;
-    top: 7%;
-    left: 6%;
+    width: 80px;
+    height: 80px;
+    top: 3%;
+    left: 3%;
+    z-index: 1;
 }
 
 #camera {
     display: none;
     opacity: 0.6;
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    top: 7%;
+    left: 6%;
 }
 #upload{
     z-index: 1;
