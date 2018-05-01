@@ -1,7 +1,7 @@
 $(function () {
     $.ajaxSetup({ timeout: 10000 });
     verificarSessao();
-
+    dataMinima();
     recuperaModalidades();
     recuperarAulas();
     $('#btnConfirmar').click(exibirAulas);
@@ -12,6 +12,7 @@ function recuperaModalidades() {
         login: window.localStorage.getItem('login'),
         senha: window.localStorage.getItem('senha')
     }
+    // Busca Modalidades
     $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/vvwu7', dados, function (data) {
         $(data).each(function (i) {
@@ -59,14 +60,30 @@ function recuperarAulas() {
 
 }
 
+function dataMinima() {
+    var dataAtual = new Date();
+    var dia = dataAtual.getDay()-1;
+    var mes = dataAtual.getMonth()+1;
+    var ano = dataAtual.getFullYear();
+    if(dia<10){
+        dia='0'+dia;
+    } 
+    if(mes<10){
+        mes='0'+mes;
+    } 
+    var dataAtual = ano + '-'+mes+'-'+dia;
+    $('#dataBusca').attr('min', dataAtual);
+}
+
 function exibirAulas() {
     // Ajuste de padrão de data
     var data = $('#dataBusca').val();
     var amd = data.split('-');
     var dataFormatada = amd[2] + '/' + amd[1] + '/' + amd[0];
+    console.log(data);
 
 
-    window.location.href = "aulas.html";
+    //window.location.href = "aulas.html";
 }
 
 function agendarAula() {

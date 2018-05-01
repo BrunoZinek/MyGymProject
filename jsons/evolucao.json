@@ -19,7 +19,7 @@
     {
         "id_evolucao":"01",
         "id_usuario":"01",
-        "data_afericao":"29/01/2018",
+        "data_afericao":"29/01/2017",
         "altura": "1,77",
         "peso": "123",
         "imc": "123",
@@ -36,7 +36,7 @@
     {
         "id_evolucao":"01",
         "id_usuario":"01",
-        "data_afericao":"29/01/2017",
+        "data_afericao":"29/01/2018",
         "altura": "1,77",
         "peso": "321",
         "imc": "321",
