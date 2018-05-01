@@ -1,68 +1,71 @@
 $(function () {
-    $.ajaxSetup({timeout:10000});
+    $.ajaxSetup({ timeout: 10000 });
     // Logar
-    $('#entrar').click(function () {
-        if (!$('#user').val() || !$('#password').val()) {
-            console.log($('#user').val());
-            console.log($('#password').val());
-            
-            alert("Favor preencher os campos login e senha");
-        } else {
-            logar();
-        }
-    });
+    $('#entrar').click(logar);
 
     //Recuperar Senha
-    $('#recSenha').click(function () {
-      fecharApp();
-        //  recuperarSenha();
-    });
+    $('#recSenha').click(recuperarSenha);
 
-    $('document').on("backbutton", fecharApp, false);
+    document.addEventListener("backbutton", function () {
+        if (confirm('Afsluiten?')) {
+            setTimeout(function () { navigator.app.exitApp(); });
+        }
+    })
 })
 
 function logar() {
-    var login = $('#user').val();
-    var senha = $('#password').val();
-    var dados = {
-        login: login,
-        senha: senha
-    }
-
-    $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/1gdbwn', dados, function (data) {
-        if (data.login == dados.login && data.senha == dados.senha) {
-            window.localStorage.setItem('login', login);
-            window.localStorage.setItem('senha', senha);
-            window.location.href = "home.html";
-        } else {
-            alert("Login ou senha incorreto!");
+    if (!$('#user').val() || !$('#password').val()) {
+        alert("Favor preencher os campos login e senha");
+    } else {
+        var login = $('#user').val();
+        var senha = $('#password').val();
+        var dados = {
+            login: login,
+            senha: senha
         }
-    })
-        .fail(function () {
-            alert("Sistema indisponivel");
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
-    /*
-    $('.box-spinner').toggle();
-    $.post('php/logar.php', dados, function () {
-      window.localStorage.setItem('login', login);
-      window.localStorage.setItem('senha', senha);
-      window.location.href = "home.html";
-    })
-      .fail(function () {
-        alert('Login ou senha incorretos!');
-        console.log(login);
-        console.log(senha);
-        
-      })
-      .always(function () {
+
         $('.box-spinner').toggle();
-      })*/
+        $.get('https://api.myjson.com/bins/1gdbwn', dados, function (data) {
+            if (data.login == dados.login && data.senha == dados.senha) {
+                window.localStorage.setItem('login', login);
+                window.localStorage.setItem('senha', senha);
+                window.location.href = "home.html";
+            } else {
+                alert("Login ou senha incorreto!");
+            }
+        })
+            .fail(function () {
+                alert("Sistema indisponivel");
+            })
+            .always(function () {
+                $('.box-spinner').toggle();
+            })
+    }
 }
+
 function fecharApp() {
     if (confirm('Fechar o aplicativo?'))
         navigator.app.exitApp();
+}
+
+function recuperarSenha() {
+    var login = $('#user').val();
+    if (!login) {
+        alert("Favor preencher os campos login e senha");
+    } else {
+        $.get('https://api.myjson.com/bins/1gdbwn', login, function (data) {
+            if (data.autenticado == 1) {
+                alert("Senha enviada para o email informado.");
+            } else {
+                alert("Login incorreto!");
+            }
+        })
+            .fail(function () {
+                alert("Sistema indisponivel");
+            })
+            .always(function () {
+                $('.box-spinner').toggle();
+            })
+    }
+    
 }
