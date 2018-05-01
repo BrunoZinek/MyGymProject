@@ -3,11 +3,22 @@ $(function () {
     // Logar
     $('#entrar').click(logar);
 
+    $('#user').keypress(function (e) {
+        if (e.which == 13) {
+            $('#password').focus();
+        }
+    });
+    $('#password').keypress(function (e) {
+        if (e.which == 13) {
+            logar();
+        }
+    });
+
     //Recuperar Senha
     $('#recSenha').click(recuperarSenha);
 
     document.addEventListener("backbutton", function () {
-        if (confirm('Afsluiten?')) {
+        if (confirm('Deseja fechar o app?')) {
             setTimeout(function () { navigator.app.exitApp(); });
         }
     })
@@ -67,5 +78,5 @@ function recuperarSenha() {
                 $('.box-spinner').toggle();
             })
     }
-    
+
 }
