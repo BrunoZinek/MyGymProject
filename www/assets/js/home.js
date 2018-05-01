@@ -5,12 +5,15 @@ $(function () {
     diaSemana();
     recuperarTreinoDia();
     $('.exibir-exec').click(exibirExec);
-    document.addEventListener("backbutton", function () {
-        if (confirm('Deseja fechar o app?')) {
-            setTimeout(function () { navigator.app.exitApp(); });
-        }
-    })
+    document.addEventListener("deviceready", onDeviceReadyBack, false);
 });
+
+function onDeviceReadyBack() {
+    document.addEventListener('backbutton', function(e){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }, false);
+}
 
 function recuperarTreinoDia() {
     var dados = {
