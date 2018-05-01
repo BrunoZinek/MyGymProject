@@ -16,14 +16,16 @@ $(function () {
 
     //Recuperar Senha
     $('#recSenha').click(recuperarSenha);
+    document.addEventListener("deviceready", onDeviceReadyBack, false);
+});
 
-    document.addEventListener("backbutton", function () {
-        if (confirm('Deseja fechar o app?')) {
-            setTimeout(function () { navigator.app.exitApp(); });
-        }
-    })
-})
-
+function onDeviceReadyBack() {
+    document.addEventListener('backbutton', function(e){
+        e.preventDefault();
+        alert('Vai fechar');
+        navigator.app.exitApp();
+    }, false);
+}
 function logar() {
     if (!$('#user').val() || !$('#password').val()) {
         alert("Favor preencher os campos login e senha");

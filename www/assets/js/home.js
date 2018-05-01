@@ -11,6 +11,7 @@ $(function () {
 function onDeviceReadyBack() {
     document.addEventListener('backbutton', function(e){
         e.preventDefault();
+        alert('Vai fechar');
         navigator.app.exitApp();
     }, false);
 }
