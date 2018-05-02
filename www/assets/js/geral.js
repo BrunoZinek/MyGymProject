@@ -33,26 +33,7 @@ function home() {
     window.location.href = "home.html";
 }
 
-function recuperarSenha() {
-    var login = $('#login').val();
-    if (!login) {
-        alert('Favor preencher o campo login');
-    } else {
-        $('.box-spinner').toggle();
-        $.get('https://api.myjson.com/bins/1gdbwn', login, function (data) {
-            if (data.login == login)
-                alert("Senha enviada para o celular cadastrado");
-            else
-                alert("Login não cadastrado");
-        })
-            .fail(function () {
-                alert("Não foi possível reenviar a senha!")
-            })
-            .always(function () {
-                $('.box-spinner').toggle();
-            })
-    }
-}
+
 
 function diaSemana() {
     var hoje = new Date();

@@ -2,8 +2,6 @@ $(function () {
     if (!window.localStorage.getItem('login')) {
         window.location.href = "login.html";
     } else {
-        console.log(location.pathname + '#');
-        location.replace(location.pathname + '#');
         $.ajaxSetup({ timeout: 10000 });
         if (verificarSessao()) {
             recuperarFoto()
