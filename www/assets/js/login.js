@@ -1,4 +1,5 @@
 $(function () {
+    location.replace(location.pathname + '#');
     $.ajaxSetup({ timeout: 10000 });
     // Logar
     $('#entrar').click(logar);

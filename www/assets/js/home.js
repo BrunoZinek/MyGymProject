@@ -2,12 +2,15 @@ $(function () {
     if (!window.localStorage.getItem('login')) {
         window.location.href = "login.html";
     } else {
+        console.log(location.pathname + '#');
+        location.replace(location.pathname + '#');
         $.ajaxSetup({ timeout: 10000 });
-        verificarSessao();
-        recuperarFoto()
-        diaSemana();
-        recuperarTreinoDia();
-        $('.exibir-exec').click(exibirExec);
+        if (verificarSessao()) {
+            recuperarFoto()
+            diaSemana();
+            recuperarTreinoDia();
+            $('.exibir-exec').click(exibirExec);
+        }        
     }
 });
 

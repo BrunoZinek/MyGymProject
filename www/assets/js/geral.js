@@ -13,7 +13,9 @@ function verificarSessao() {
     if (!window.localStorage.getItem('login')) {
         alert("Você precisa estar logado.");
         window.location.href = "index.html";
+        return false;
     }
+    return true;
 }
 
 function sair() {
