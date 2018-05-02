@@ -1,5 +1,4 @@
 $(function () {
-    location.replace(location.pathname + '#');
     $.ajaxSetup({ timeout: 10000 });
     // Logar
     $('#entrar').click(logar);
@@ -27,36 +26,39 @@ function onDeviceReadyBack() {
         navigator.app.exitApp();
     }, false);
 }
+
 function logar() {
-    if (!$('#user').val() || !$('#password').val()) {
-        alert("Favor preencher os campos login e senha");
-    } else {
-        alert('Exit App');
-        navigator.app.exitApp();
-        /*var login = $('#user').val();
-        var senha = $('#password').val();
-        var dados = {
-            login: login,
-            senha: senha
-        }
+    alert('Exit App');
+    navigator.app.exitApp();
+    /*
+        if (!$('#user').val() || !$('#password').val()) {
+            alert("Favor preencher os campos login e senha");
+        } else {
     
-        $('.box-spinner').toggle();
-        $.get('https://api.myjson.com/bins/1gdbwn', dados, function (data) {
-            if (data.login == dados.login && data.senha == dados.senha) {
-                window.localStorage.setItem('login', login);
-                window.localStorage.setItem('senha', senha);
-                window.location.href = "home.html";
-            } else {
-                alert("Login ou senha incorreto!");
+            var login = $('#user').val();
+            var senha = $('#password').val();
+            var dados = {
+                login: login,
+                senha: senha
             }
-        })
-            .fail(function () {
-                alert("Sistema indisponivel");
+        
+            $('.box-spinner').toggle();
+            $.get('https://api.myjson.com/bins/1gdbwn', dados, function (data) {
+                if (data.login == dados.login && data.senha == dados.senha) {
+                    window.localStorage.setItem('login', login);
+                    window.localStorage.setItem('senha', senha);
+                    window.location.href = "home.html";
+                } else {
+                    alert("Login ou senha incorreto!");
+                }
             })
-            .always(function () {
-                $('.box-spinner').toggle();
-            })*/
-    }
+                .fail(function () {
+                    alert("Sistema indisponivel");
+                })
+                .always(function () {
+                    $('.box-spinner').toggle();
+                })
+}*/
 }
 
 function fecharApp() {
