@@ -1,17 +1,16 @@
 $(function () {
-    $.ajaxSetup({timeout:10000});
+    $.ajaxSetup({ timeout: 10000 });
     verificarSessao();
     recuperarFoto()
     diaSemana();
     recuperarTreinoDia();
     $('.exibir-exec').click(exibirExec);
-    document.addEventListener("deviceready", onDeviceReadyBack, false);
+    document.addEventListener("deviceready", onDeviceReady, false);
 });
 
-function onDeviceReadyBack() {
-    document.addEventListener('backbutton', function(e){
-        e.preventDefault();
-        alert('Vai fechar');
+function onDeviceReady() {
+    document.addEventListener("backbutton", function () {
+        alert('vai fechar');
         navigator.app.exitApp();
     }, false);
 }
@@ -21,7 +20,7 @@ function recuperarTreinoDia() {
         login: window.localStorage.getItem('login'),
         senha: window.localStorage.getItem('senha')
     }
-    $('.box-spinner').toggle(); 
+    $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/13411b', dados, function (data) {
         if (data.length > 0) {
             $('.treino-home').show();
@@ -59,7 +58,7 @@ function recuperarFoto() {
 }
 
 function exibirExec() {
-    window.location.href="execucoes.html";
+    window.location.href = "execucoes.html";
 }
 
 function onBackKeyDown() {
