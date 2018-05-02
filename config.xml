@@ -7,7 +7,7 @@
     <author email="brunozinek@outlook.com" href="https://www.facebook.com/bruno.zinek">
         My Gym
     </author>
-	<content src="index.html" />
+	<content src="home.html" />
 	<feature name="App"> 
 		<param name="android-package" value="org.apache.cordova.App"/>  
 	</feature>

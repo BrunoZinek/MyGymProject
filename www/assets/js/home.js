@@ -1,4 +1,7 @@
 $(function () {
+    if (!window.localStorage.getItem('login')) {      
+        window.location.href = "login.html";
+    }
     $.ajaxSetup({ timeout: 10000 });
     verificarSessao();
     recuperarFoto()
