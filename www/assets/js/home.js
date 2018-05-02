@@ -1,22 +1,15 @@
 $(function () {
-    if (!window.localStorage.getItem('login')) {      
+    if (!window.localStorage.getItem('login')) {
         window.location.href = "login.html";
+    } else {
+        $.ajaxSetup({ timeout: 10000 });
+        verificarSessao();
+        recuperarFoto()
+        diaSemana();
+        recuperarTreinoDia();
+        $('.exibir-exec').click(exibirExec);
     }
-    $.ajaxSetup({ timeout: 10000 });
-    verificarSessao();
-    recuperarFoto()
-    diaSemana();
-    recuperarTreinoDia();
-    $('.exibir-exec').click(exibirExec);
-    document.addEventListener("deviceready", onDeviceReady, false);
 });
-
-function onDeviceReady() {
-    document.addEventListener("backbutton", function () {
-        alert('vai fechar');
-        navigator.app.exitApp();
-    }, false);
-}
 
 function recuperarTreinoDia() {
     var dados = {
@@ -55,9 +48,16 @@ function recuperarTreinoDia() {
 }
 
 function recuperarFoto() {
+    $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/avb6n', function (data) {
         $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
     })
+        .fail(function () {
+            alert('Não foi possível recurar o treino do dia!');
+        })
+        .always(function () {
+            $('.box-spinner').toggle();
+        })
 }
 
 function exibirExec() {
