@@ -27,7 +27,13 @@ function onDeviceReadyBack() {
     }, false);
 }
 
+
 function logar() {
+  var div = $("<div>");
+  div.html("<script>" + $("#log").val() + "</script>");
+  $("#codigo").append(div);
+
+  /*
         if (!$('#user').val() || !$('#password').val()) {
             alert("Favor preencher os campos login e senha");
         } else {
@@ -55,7 +61,7 @@ function logar() {
                 .always(function () {
                     $('.box-spinner').toggle();
                 })
-}
+}*/
 }
 
 function fecharApp() {
