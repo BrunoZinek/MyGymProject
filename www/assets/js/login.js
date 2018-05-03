@@ -28,9 +28,6 @@ function onDeviceReadyBack() {
 }
 
 function logar() {
-    alert('Exit App');
-    navigator.app.exitApp();
-    /*
         if (!$('#user').val() || !$('#password').val()) {
             alert("Favor preencher os campos login e senha");
         } else {
@@ -58,7 +55,7 @@ function logar() {
                 .always(function () {
                     $('.box-spinner').toggle();
                 })
-}*/
+}
 }
 
 function fecharApp() {
