@@ -40,12 +40,10 @@ function alterarSenha() {
             } else {
                 alert('Senha atual informada diferente da cadastrada');
             }
+        }).fail(function () {
+            alert('Sistema indisponível.');
+        }).always(function () {
+            $('.box-spinner').toggle();
         })
-            .fail(function () {
-                alert('Sistema indisponível.');
-            })
-            .always(function () {
-                $('.box-spinner').toggle();
-            })
     }
 }

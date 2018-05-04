@@ -20,13 +20,11 @@ function recuperaModalidades() {
             var opcao = $('<option>').attr('value', i + 1).text(data[i].modalidade);
             modalidades.append(opcao);
         });
+    }).fail(function () {
+        alert('Não foi possível recuperar o treino do dia!');
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Não foi possível recuperar o treino do dia!');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 }
 
 function recuperarAulas() {
@@ -50,28 +48,26 @@ function recuperarAulas() {
             linha.click(agendarAula);
             tabela.append(linha);
         });
+    }).fail(function () {
+        alert('Não foi possível recuperar o treino do dia!');
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Não foi possível recuperar o treino do dia!');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 
 }
 
 function dataMinima() {
     var dataAtual = new Date();
-    var dia = dataAtual.getDay()-1;
-    var mes = dataAtual.getMonth()+1;
+    var dia = dataAtual.getDay() - 1;
+    var mes = dataAtual.getMonth() + 1;
     var ano = dataAtual.getFullYear();
-    if(dia<10){
-        dia='0'+dia;
-    } 
-    if(mes<10){
-        mes='0'+mes;
-    } 
-    var dataAtual = ano + '-'+mes+'-'+dia;
+    if (dia < 10) {
+        dia = '0' + dia;
+    }
+    if (mes < 10) {
+        mes = '0' + mes;
+    }
+    var dataAtual = ano + '-' + mes + '-' + dia;
     $('#dataBusca').attr('min', dataAtual);
 }
 
@@ -110,11 +106,9 @@ function agendarAula() {
                 alert(Não foi possivel agendar sua aula. Tente novamente mais tarde);
             }
 
-        })
-        .fail(function () {
+        }).fail(function () {
             alert('Sistema indisponível');
-        })
-        .always(function () {
+        }).always(function () {
             $('.box-spinner').toggle();
         })
         */

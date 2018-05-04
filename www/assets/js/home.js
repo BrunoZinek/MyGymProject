@@ -8,7 +8,7 @@ $(function () {
             diaSemana();
             recuperarTreinoDia();
             $('.exibir-exec').click(exibirExec);
-        }        
+        }
     }
 });
 
@@ -39,32 +39,24 @@ function recuperarTreinoDia() {
             $('#treinoDia').text('Descanso');
             alert('Você não tem treino cadastrado para hoje. Descanse!');
         }
+    }).fail(function () {
+        alert('Não foi possível recurar o treino do dia!');
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Não foi possível recurar o treino do dia!');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 }
 
 function recuperarFoto() {
     $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/avb6n', function (data) {
         $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
+    }).fail(function () {
+        alert('Não foi possível recurar o treino do dia!');
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Não foi possível recurar o treino do dia!');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 }
 
 function exibirExec() {
     window.location.href = "execucoes.html";
-}
-
-function onBackKeyDown() {
-    navigator.app.exitApp();
 }

@@ -37,13 +37,11 @@ function buscarEvolucao() {
             $('#final10').append(data[1].panturrilha);
             $('#final11').append(data[1].coxa);
             $('#final12').append(data[1].pescoco);
+        }).fail(function () {
+            alert('Sistema indisponível');
+        }).always(function () {
+            $('.box-spinner').toggle();
         })
-            .fail(function () {
-                alert('Sistema indisponível');
-            })
-            .always(function () {
-                $('.box-spinner').toggle();
-            })
         $('#divEvol').slideToggle();
         $('#buscarEvolucao').attr('disabled', true);
     }
@@ -59,15 +57,12 @@ function buscarDatas() {
             item.text(dataAfericao);
             select.prepend(item);
         })
-
+    }).fail(function () {
+        alert('Sistema indisponível');
+    }).always(function () {
+        $('.box-spinner').toggle();
+        ordenar();
     })
-        .fail(function () {
-            alert('Sistema indisponível');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-            ordenar();
-        })
 
 }
 
@@ -114,5 +109,4 @@ function limparCampos() {
     $('#final10').text('');
     $('#final11').text('');
     $('#final12').text('');
-
 }

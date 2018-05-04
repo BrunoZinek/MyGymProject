@@ -33,8 +33,6 @@ function home() {
     window.location.href = "home.html";
 }
 
-
-
 function diaSemana() {
     var hoje = new Date();
     var dia = hoje.getDay();
@@ -62,13 +60,14 @@ function redirectPag() {
         window.location.href = "index.html";
     }
 }
+
 function converterParaBase64(arquivo) {
 
     var file = arquivo.files[0];
     var reader = new FileReader();
 
-    reader.onloadend = function() {
-      console.log(reader.result);
+    reader.onloadend = function () {
+        console.log(reader.result);
     }
     reader.readAsDataURL(file);
-  }
+}

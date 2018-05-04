@@ -10,7 +10,6 @@ $(function () {
     });
     $(document).on("change", "#uploadFoto", function (e) {
         trocarFoto(this.files);
-
     });
 })
 
@@ -34,13 +33,11 @@ function recuperarPerfil() {
         $('#coxa').text(data[0].coxa);
         $('#pescoco').text(data[0].pescoco);
         $('#dtMatric').text(data[0].dtMatric);
+    }).fail(function () {
+        alert('Sistema indisponivel')
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Sistema indisponivel')
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 }
 
 function editarPerfil() {
@@ -75,13 +72,11 @@ function salvarPerfil() {
         } else {
             alert('Não foi possivel atualizar os dados. Tente novamente mais tarde');
         }
+    }).fail(function () {
+        alert('Sistema indisponível. Tente novamente mais tarde');
+    }).always(function () {
+        $('.box-spinner').toggle();
     })
-        .fail(function () {
-            alert('Sistema indisponível. Tente novamente mais tarde');
-        })
-        .always(function () {
-            $('.box-spinner').toggle();
-        })
 
     /*  $("#iptNome").prop("disabled", true);
     $("#iptDtNasc").prop("disabled", true);
@@ -92,25 +87,22 @@ function salvarPerfil() {
 function trocarFoto(foto) {
     if (foto && foto[0]) {
         var reader = new FileReader();
-
         reader.onload = function (e) {
             var image = new Image();
-            image.src = e.target.result;            
-            image.onload = function () { 
-                var tamanho = foto[0].size;                             
+            image.src = e.target.result;
+            image.onload = function () {
+                var tamanho = foto[0].size;
                 var height = this.height;
                 var width = this.width;
-                if(tamanho > 100000){
+                if (tamanho > 100000) {
                     alert("Favor selecionar uma imagem com no máximo 100kb");
-                }else if (height > 400 || width > 400) {
+                } else if (height > 400 || width > 400) {
                     alert("Favor selecionar uma imagem com resolução maxima de 400x400");
                 } else {
                     $('#avatar').attr('src', e.target.result);
                 }
             };
-
         }
-
         reader.readAsDataURL(foto[0]);
     }
 }
