@@ -55,17 +55,17 @@ function recuperarValidadePlano() {
         if (mes < 10) {
             var mes = '0' + mes;
         }
-        var dataAtualFormatada = ano + '/' + mes + '/' + dia;
+        var dataAtualYMD = ano + '/' + mes + '/' + dia;
         var d = "03/05/2018";
         var dma = d.split("/");
         var dataContratacao = new Date(
             parseInt(dma[2], 10),
             parseInt(dma[1], 10),
             parseInt(dma[0], 10) + validade);
-        var dataFormatada = dataContratacao.getFullYear() + '/' + (dataContratacao.getMonth() < 10 ? '0' + dataContratacao.getMonth() : dataContratacao.getMonth()) + '/' + (dataContratacao.getDate() < 10 ? '0' + dataContratacao.getDate() : dataContratacao.getDate());
-        alert(dataFormatada + ' - ' + dataAtualFormatada);
-        $('#dtValidade').text(dataFormatada);
-        if (dataFormatada < dataAtualFormatada) {
+        var dataFormatadaYMD = dataContratacao.getFullYear() + '/' + (dataContratacao.getMonth() < 10 ? '0' + dataContratacao.getMonth() : dataContratacao.getMonth()) + '/' + (dataContratacao.getDate() < 10 ? '0' + dataContratacao.getDate() : dataContratacao.getDate());
+        var dataFormatadaDMY = (dataContratacao.getDate() < 10 ? '0' + dataContratacao.getDate() : dataContratacao.getDate()) + '/' + (dataContratacao.getMonth() < 10 ? '0' + dataContratacao.getMonth() : dataContratacao.getMonth()) + '/' + dataContratacao.getFullYear();
+        $('#dtValidade').text(dataFormatadaDMY);
+        if (dataFormatadaYMD < dataAtualYMD) {
             $('#vencido').show();
         } else {
             $('#vencido').hide();
