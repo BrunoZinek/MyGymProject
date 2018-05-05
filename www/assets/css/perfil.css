@@ -5,6 +5,7 @@
 .card-avatar {
     margin: auto !important;
     width: 75% !important;
+    margin: 5px auto !important;
 }
 
 .form-control {
@@ -44,24 +45,15 @@ span {
     font-weight: bolder;
 }
 
-#uploadFoto {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    top: 3%;
+#upload{
+    width: 77px;
+    height: 39px;
+    top: 16%;
     left: 3%;
-    z-index: 1;
 }
 
-#camera {
-    display: none;
-    opacity: 0.6;
-    position: absolute;
-    width: 60px;
-    height: 50px;
-    top: 7%;
-    left: 6%;
-}
-#upload{
-    z-index: 1;
+#btnUpload{
+    padding: 0px 5px !important;
+    margin: 0px auto !important;
+    opacity: 0;
 }

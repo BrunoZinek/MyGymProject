@@ -19,17 +19,17 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-    
+
 </head>
 
 <body>
     <!-- Spinner -->
     <div class="box-spinner">
-            <div class="spinner">
-                <div class="loader"></div>
-            </div>
+        <div class="spinner">
+            <div class="loader"></div>
         </div>
-        <!-- Fim Spinner -->
+    </div>
+    <!-- Fim Spinner -->
     <div class="wrapper">
         <!--INICIO DA BARRA LATERAL-->
         <div class="sidebar" data-color="aqua" data-image="../assets/img/sidebar-1.jpg">
@@ -109,10 +109,12 @@
                                         <td rowspan="3" style="width:30%">
                                             <div class="card-avatar">
                                                 <a href="#">
-                                                    <input id="uploadFoto" type="file" accept=".jpg" disabled>
-                                                    <img id="camera" src="../assets/img/camera.png">
-                                                    <img class="img" id="avatar" width="80px"/>
+                                                    <img class="img" id="avatar" width="80px" />
                                                 </a>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-primary" id="btnUpload">Trocar Foto</button>
+                                                <input name="upload" id="upload" type="file" disabled>
                                             </div>
                                         </td>
                                         <th>
@@ -127,7 +129,7 @@
                                             <label>Dt de Nasc.:</label>
                                         </th>
                                         <td>
-                                            <input id="iptDtNasc" type="text"  class="form-control disabled" disabled>
+                                            <input id="iptDtNasc" type="text" class="form-control disabled" disabled>
                                         </td>
                                     </tr>
                                     <tr>
@@ -242,9 +244,9 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <button id="btnEditar" type="button" class="btn btn-primary" >EDITAR</button>
+                                <button id="btnEditar" type="button" class="btn btn-primary">EDITAR</button>
                                 <button id="btnSalvar" type="button" class="btn btn-primary" style="display:none">SALVAR</button>
-                                <button id="btnAltSenha" type="button" class="btn btn-primary" >ALTERAR SENHA</button>
+                                <button id="btnAltSenha" type="button" class="btn btn-primary">ALTERAR SENHA</button>
                             </div>
                         </div>
                     </div>
@@ -273,4 +275,5 @@
 <!-- Scripts -->
 <script type="text/javascript" src="../assets/js/geral.js"></script>
 <script type="text/javascript" src="../assets/js/perfil.js"></script>
+
 </html>

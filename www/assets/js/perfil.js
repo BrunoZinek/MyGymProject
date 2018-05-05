@@ -8,7 +8,7 @@ $(function () {
     $('#btnAltSenha').click(function () {
         window.location.href = 'alterar_senha.html';
     });
-    $(document).on("change", "#uploadFoto", function (e) {
+    $(document).on("change", "#upload", function (e) {
         trocarFoto(this.files);
     });
 })
@@ -46,7 +46,8 @@ function editarPerfil() {
     $('#iptDtNasc').removeClass('disabled');
     $("#iptDtNasc").prop("disabled", false);
     $('#iptEmail').removeClass('disabled');
-    $("#uploadFoto").prop("disabled", false);
+    $("#btnUpload").css("opacity", '1');
+    $("#upload").prop("disabled", false);
     $("#camera").show();
     $("#iptEmail").prop("disabled", false);
     $('#btnEditar').hide();

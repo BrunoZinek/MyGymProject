@@ -11,19 +11,19 @@ $(function () {
 function verificaDia() {
     var diaAtual = diaSemana().toUpperCase();
     if ($('#btnSegunda').text() == diaAtual) {
-        $('#btnSegunda').addClass('active')
+        $('#btnSegunda').addClass('dia-ativo')
     } else if ($('#btnTerca').text() == diaAtual) {
-        $('#btnTerca').addClass('active');
+        $('#btnTerca').addClass('dia-ativo');
     } else if ($('#btnQuarta').text() == diaAtual) {
-        $('#btnQuarta').addClass('active');
+        $('#btnQuarta').addClass('dia-ativo');
     } else if ($('#btnQuinta').text() == diaAtual) {
-        $('#btnQuinta').addClass("active");
+        $('#btnQuinta').addClass("dia-ativo");
     } else if ($('#btnSexta').text() == diaAtual) {
-        $('#btnSexta').addClass('active');
+        $('#btnSexta').addClass('dia-ativo');
     } else if ($('#btnSabado').text() == diaAtual) {
-        $('#btnSabado').addClass('active');
+        $('#btnSabado').addClass('dia-ativo');
     } else if ($('#btnDomingo').text() == diaAtual) {
-        $('#btnDomingo').addClass('active');
+        $('#btnDomingo').addClass('dia-ativo');
     }
 }
 
