@@ -31,7 +31,7 @@ function recuperarPlanos() {
             boxPlano.append(plano);
         });
     }).fail(function () {
-        alert('Não foi possível recuperar o treino do dia!');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })
@@ -71,7 +71,7 @@ function recuperarValidadePlano() {
             $('#vencido').hide();
         }
     }).fail(function () {
-        alert('Sistema indisponível');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })

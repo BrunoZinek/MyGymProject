@@ -40,7 +40,7 @@ function recuperarSenha() {
                 alert("Login não cadastrado");
         })
             .fail(function () {
-                alert("Não foi possível reenviar a senha!")
+                alert("Sistema indisponivel. Tente novamente mais tarde!")
             })
             .always(function () {
                 $('.box-spinner').toggle();

@@ -40,7 +40,7 @@ function recuperarTreinoDia() {
             alert('Você não tem treino cadastrado para hoje. Descanse!');
         }
     }).fail(function () {
-        alert('Não foi possível recurar o treino do dia!');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })
@@ -48,10 +48,10 @@ function recuperarTreinoDia() {
 
 function recuperarFoto() {
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/avb6n', function (data) {
+    $.get('https://api.myjson.com/bins/njl4a', function (data) {
         $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
     }).fail(function () {
-        alert('Não foi possível recurar o treino do dia!');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })

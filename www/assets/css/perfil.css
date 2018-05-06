@@ -25,10 +25,16 @@ th {
     border: none !important;
     height: 35px !important;
     padding: 0 !important;
+    width: 75px !important;
 }
 
-.medidas tr, .medidas td, .medidas th {
-    width: 75px !important;
+.endereco tr, .endereco td, .endereco th {
+    border: none !important;
+}
+
+.endereco td{
+    padding: 0 !important;
+    width: 30px !important;
 }
 
 .medidas {
@@ -56,4 +62,37 @@ span {
     padding: 0px 5px !important;
     margin: 0px auto !important;
     opacity: 0;
+}
+
+#divCel label, #divCel input,
+#divCep label, #divCep input,
+#divBairro label, #divBairro input,
+#divCidade label, #divCidade input {
+    display: inline !important;
+}
+
+#divCel input,
+#divCep input,
+#divBairro input{
+    margin-top: 5px !important;
+    width: 75%;
+}
+
+#divCep label{
+    margin-left: 15px !important;
+}
+
+#numero, #uf{
+    width: 50px !important;
+}
+
+#bairro{
+    width: 50% !important;
+}
+#cidade{
+    width: 40% !important;
+}
+
+#exibeMedidas{
+    margin: 10px auto !important;
 }

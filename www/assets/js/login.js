@@ -37,7 +37,7 @@ function logar() {
                 alert("Login ou senha incorreto!");
             }
         }).fail(function () {
-            alert("Sistema indisponivel");
+            alert("Sistema indisponivel. Tente novamente mais tarde!");
         }).always(function () {
             $('.box-spinner').toggle();
         })
@@ -60,7 +60,7 @@ function recuperarSenha() {
                 alert("Login incorreto!");
             }
         }).fail(function () {
-            alert("Sistema indisponivel");
+            alert("Sistema indisponivel. Tente novamente mais tarde!");
         }).always(function () {
             $('.box-spinner').toggle();
         })

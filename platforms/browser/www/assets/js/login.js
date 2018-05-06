@@ -40,7 +40,7 @@ function logar() {
         }
     })
         .fail(function () {
-            alert("Sistema indisponivel");
+            alert("Sistema indisponivel. Tente novamente mais tarde!");
         })
         .always(function () {
             $('.box-spinner').toggle();

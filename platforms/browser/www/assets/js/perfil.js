@@ -35,7 +35,7 @@ function recuperarPerfil() {
         $('#dtMatric').text(data[0].dtMatric);
     })
         .fail(function () {
-            alert('Sistema indisponivel')
+            alert('Sistema indisponivel. Tente novamente mais tarde!')
         })
         .always(function () {
             $('.box-spinner').toggle();

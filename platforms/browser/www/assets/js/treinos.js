@@ -56,7 +56,7 @@ function recuperarTreinoDia() {
         }
     })
         .fail(function () {
-            alert('Não foi possível recuperar o treino do dia!');
+            alert('Sistema indisponivel. Tente novamente mais tarde!');
         })
         .always(function () {
            $('.box-spinner').toggle();

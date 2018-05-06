@@ -21,7 +21,7 @@ function recuperaModalidades() {
             modalidades.append(opcao);
         });
     }).fail(function () {
-        alert('Não foi possível recuperar o treino do dia!');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })
@@ -49,7 +49,7 @@ function recuperarAulas() {
             tabela.append(linha);
         });
     }).fail(function () {
-        alert('Não foi possível recuperar o treino do dia!');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })

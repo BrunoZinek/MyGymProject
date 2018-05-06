@@ -9,7 +9,7 @@ function recuperarExec() {
     $.get('https://api.myjson.com/bins/dp8xr', function (data) {
         $('#execucao').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
     }).fail(function () {
-        alert('Sistema indisponível');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
     })

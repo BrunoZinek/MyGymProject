@@ -38,7 +38,7 @@ function buscarEvolucao() {
             $('#final11').append(data[1].coxa);
             $('#final12').append(data[1].pescoco);
         }).fail(function () {
-            alert('Sistema indisponível');
+            alert('Sistema indisponivel. Tente novamente mais tarde!');
         }).always(function () {
             $('.box-spinner').toggle();
         })
@@ -58,7 +58,7 @@ function buscarDatas() {
             select.prepend(item);
         })
     }).fail(function () {
-        alert('Sistema indisponível');
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
         ordenar();

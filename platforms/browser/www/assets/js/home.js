@@ -37,7 +37,7 @@ function recuperarTreinoDia() {
         }
     })
         .fail(function () {
-            alert('Não foi possível recurar o treino do dia!');
+            alert('Sistema indisponivel. Tente novamente mais tarde!');
         })
         .always(function () {
             $('.box-spinner').toggle();

@@ -141,109 +141,138 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <table class="table medidas">
-                                    <tr>
-                                        <th>
-                                            <label>Altura:</label>
-                                        </th>
-                                        <td>
-                                            <span id="altura">
-                                        </td>
-                                        <th>
-                                            <label>Peso:</label>
-                                        </th>
-                                        <td>
-                                            <span id="peso">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <label>IMC:</label>
-                                        </th>
-                                        <td>
-                                            <span id="imc">
-                                        </td>
-                                        <th>
-                                            <label>Gordura:</label>
-                                        </th>
-                                        <td>
-                                            <span id="gordura">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="4">
-                                            <h4>
-                                                <label>
-                                                    <strong> Medidas</strong>
-                                                </label>
-                                            </h4>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <label>Biceps:</label>
-                                        </th>
-                                        <td>
-                                            <span id="biceps">
-                                        </td>
-                                        <th>
-                                            <label>Antebraço:</label>
-                                        </th>
-                                        <td>
-                                            <span id="antebraco">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <label>Peito:</label>
-                                        </th>
-                                        <td>
-                                            <span id="peito">
-                                        </td>
-                                        <th>
-                                            <label>Abdomen:</label>
-                                        </th>
-                                        <td>
-                                            <span id="abdomen">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <label>Quadril:</label>
-                                        </th>
-                                        <td>
-                                            <span id="quadril">
-                                        </td>
-                                        <th>
-                                            <label>Panturrilha:</label>
-                                        </th>
-                                        <td>
-                                            <span id="panturrilha">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <label>Coxa:</label>
-                                        </th>
-                                        <td>
-                                            <span id="coxa">
-                                        </td>
-                                        <th>
-                                            <label>Pescoço:</label>
-                                        </th>
-                                        <td>
-                                            <span id="pescoco">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <label>Data de Matrícula:</label>
-                                        </td>
-                                        <td colspan="2">
-                                            <span id="dtMatric">
-                                        </td>
-                                    </tr>
+                                <table class="table endereco">
+                                    <div id="divCel">
+                                        <label for="celular">Celular:</label>
+                                        <input id="celular" name="celular" type="phone" class="form-control disabled" disabled>
+                                    </div>
+                                    <div id="divCep">
+                                        <label for="cep">CEP:</label>
+                                        <input id="cep" name="cep" type="text" class="form-control disabled" disabled>
+                                        <label for="rua">Rua:</label>
+                                        <input id="rua" name="rua" type="text" class="form-control" disabled>
+                                    </div>
+                                    <div id="divBairro">
+                                        <label for="numero">Nr:</label>
+                                        <input id="numero" name="numero" type="number" class="form-control disabled" disabled>
+                                        <label for="bairro">Bairro:</label>
+                                        <input id="bairro" name="bairro" type="text" class="form-control" disabled>
+                                    </div>
+                                    <div id="divCidade">
+                                        <label for="cidade">Cidade:</label>
+                                        <input id="cidade" name="cidade" type="text" class="form-control" disabled>
+                                        <label for="uf">Estado:</label>
+                                        <input id="uf" name="uf" type="text" class="form-control" disabled>
+                                    </div>
                                 </table>
+                                <div id="exibeMedidas">
+                                    <button id="btnExibirMedidas" class="btn btn-primary">Exibir Medidas</button>
+                                </div>
+                                <div id="tabelaMedidas" style="display:none">
+                                    <table class="table medidas">
+                                        <tr>
+                                            <th>
+                                                <label>Altura:</label>
+                                            </th>
+                                            <td>
+                                                <span id="altura">
+                                            </td>
+                                            <th>
+                                                <label>Peso:</label>
+                                            </th>
+                                            <td>
+                                                <span id="peso">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label>IMC:</label>
+                                            </th>
+                                            <td>
+                                                <span id="imc">
+                                            </td>
+                                            <th>
+                                                <label>Gordura:</label>
+                                            </th>
+                                            <td>
+                                                <span id="gordura">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="4">
+                                                <h4>
+                                                    <label>
+                                                        <strong> Medidas</strong>
+                                                    </label>
+                                                </h4>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label>Biceps:</label>
+                                            </th>
+                                            <td>
+                                                <span id="biceps">
+                                            </td>
+                                            <th>
+                                                <label>Antebraço:</label>
+                                            </th>
+                                            <td>
+                                                <span id="antebraco">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label>Peito:</label>
+                                            </th>
+                                            <td>
+                                                <span id="peito">
+                                            </td>
+                                            <th>
+                                                <label>Abdomen:</label>
+                                            </th>
+                                            <td>
+                                                <span id="abdomen">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label>Quadril:</label>
+                                            </th>
+                                            <td>
+                                                <span id="quadril">
+                                            </td>
+                                            <th>
+                                                <label>Panturrilha:</label>
+                                            </th>
+                                            <td>
+                                                <span id="panturrilha">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label>Coxa:</label>
+                                            </th>
+                                            <td>
+                                                <span id="coxa">
+                                            </td>
+                                            <th>
+                                                <label>Pescoço:</label>
+                                            </th>
+                                            <td>
+                                                <span id="pescoco">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <label>Data de Matrícula:</label>
+                                            </td>
+                                            <td colspan="2">
+                                                <span id="dtMatric">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <button id="btnEditar" type="button" class="btn btn-primary">EDITAR</button>
                                 <button id="btnSalvar" type="button" class="btn btn-primary" style="display:none">SALVAR</button>
                                 <button id="btnAltSenha" type="button" class="btn btn-primary">ALTERAR SENHA</button>

@@ -41,7 +41,7 @@ function alterarSenha() {
                 alert('Senha atual informada diferente da cadastrada');
             }
         }).fail(function () {
-            alert('Sistema indisponível.');
+            alert('Sistema indisponivel. Tente novamente mais tarde!');
         }).always(function () {
             $('.box-spinner').toggle();
         })

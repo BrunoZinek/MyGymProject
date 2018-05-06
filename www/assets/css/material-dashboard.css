@@ -2843,8 +2843,8 @@ fieldset[disabled] .form-group .form-control {
     position: absolute;
     display: none;
 }
-
-.form-group.is-focused .form-control {
+/*
+.form-group .form-control.is-focused{
     outline: none;
     background-image: linear-gradient(#14cea6, #14cea6), linear-gradient(#D2D2D2, #D2D2D2);
     background-size: 100% 2px, 100% 1px;
@@ -2854,7 +2854,7 @@ fieldset[disabled] .form-group .form-control {
 
 .form-group.is-focused .form-control .material-input:after {
     background-color: #14cea6;
-}
+}*/
 
 .form-group.is-focused.form-info .form-control {
     background-image: linear-gradient(#14cea6, #14cea6), linear-gradient(#D2D2D2, #D2D2D2);

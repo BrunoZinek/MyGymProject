@@ -1,4 +1,4 @@
-usuario: https://api.myjson.com/bins/avb6n
+usuario: https://api.myjson.com/bins/njl4a
 exercicios: https://api.myjson.com/bins/13411b
 planos: https://api.myjson.com/bins/1b4lxb
 aulas: https://api.myjson.com/bins/vvwu7
