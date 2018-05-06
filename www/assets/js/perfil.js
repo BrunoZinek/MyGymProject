@@ -115,8 +115,8 @@ function trocarFoto(foto) {
                 var tamanho = foto[0].size;
                 var height = this.height;
                 var width = this.width;
-                if (tamanho > 100000) {
-                    alert("Favor selecionar uma imagem com no máximo 100kb");
+                if (tamanho > 1048576) {
+                    alert("Favor selecionar uma imagem com no máximo 1mb");
                 } else if (height > 400 || width > 400) {
                     alert("Favor selecionar uma imagem com resolução maxima de 400x400");
                 } else {
@@ -131,16 +131,12 @@ function trocarFoto(foto) {
 function buscaEndereco() {
     //Quando o campo cep perde o foco.
     $("#cep").blur(function () {
-
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');
-
         //Verifica se campo cep possui valor informado.
         if (cep != "") {
-
             //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
+            var validacep = /^[0-9]{8}$/;            
             //Valida o formato do CEP.
             if (validacep.test(cep)) {
                 $('.box-spinner').toggle();
@@ -166,9 +162,10 @@ function buscaEndereco() {
             } //end if.
             else {
                 //cep é inválido.
+                alert("Formato de CEP inválido.");
                 $("#cep").val("");
                 $("#cep").focus();
-                alert("Formato de CEP inválido.");
+
             }
 
         } //end if.
