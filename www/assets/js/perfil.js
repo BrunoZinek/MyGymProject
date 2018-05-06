@@ -6,6 +6,9 @@ $(function () {
     $('#btnEditar').click(editarPerfil);
     $('#btnSalvar').click(salvarPerfil);
     $('#btnSalvar').click(salvarPerfil);
+    $('#btnUpload').click(function(){
+        $('#upload').click();
+    })
     $('#btnExibirMedidas').click(exibirMedidas);
     $('#btnAltSenha').click(function () {
         window.location.href = 'alterar_senha.html';
@@ -115,12 +118,21 @@ function trocarFoto(foto) {
                 var tamanho = foto[0].size;
                 var height = this.height;
                 var width = this.width;
+                console.log("height: " + height);
+                console.log("width: " + width);
+
+
                 if (tamanho > 1048576) {
                     alert("Favor selecionar uma imagem com no máximo 1mb");
-                } else if (height > 400 || width > 400) {
-                    alert("Favor selecionar uma imagem com resolução maxima de 400x400");
+                } else if (height > 700 || width > 700) {
+                    alert("Imagem selecionada: "+width+"x"+height+"px.\n"
+                    +"Favor selecionar uma imagem com resolução até 700x700px.");
                 } else {
-                    $('#avatar').attr('src', e.target.result);
+                    if (height - 100 > width && height + 100 < width) {
+                        alert("Favor selecionar uma imagem com quadrada ou em formato retrato");
+                    } else {
+                        $('#avatar').attr('src', e.target.result);
+                    }
                 }
             };
         }
@@ -136,7 +148,7 @@ function buscaEndereco() {
         //Verifica se campo cep possui valor informado.
         if (cep != "") {
             //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;            
+            var validacep = /^[0-9]{8}$/;
             //Valida o formato do CEP.
             if (validacep.test(cep)) {
                 $('.box-spinner').toggle();
