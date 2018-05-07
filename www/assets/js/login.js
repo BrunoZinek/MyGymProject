@@ -28,8 +28,8 @@ function logar() {
             senha: senha
         }
         $('.box-spinner').toggle();
-        $.get('https://api.myjson.com/bins/1gdbwn', dados, function (data) {
-            if (data.login == dados.login && data.senha == dados.senha) {
+        $.post('http://localhost/mygym/logar.php', dados, function (data) {
+            if (data.autenticado == 1) {
                 window.localStorage.setItem('login', login);
                 window.localStorage.setItem('senha', senha);
                 window.location.href = "home.html";

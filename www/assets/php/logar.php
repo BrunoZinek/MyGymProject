@@ -1,6 +1,10 @@
-<?php  
-    include_once("valida.php");
+<?php 
+	header('Access-Control-Allow-Origin: *'); 
+	header('Content-Type: application/json'); 
 
+	include_once("conexao.php");	
+    include_once("valida.php");
+		
 
     $id_usuario = validar($conn);	
   
@@ -9,7 +13,7 @@
 	}
     
 	else{
-	echo json_encode(array('autenticado' => 1));
+		echo json_encode(array('autenticado' => 1));
 	}
-    
+    mysqli_close($conn);
 ?>
