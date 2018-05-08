@@ -120,7 +120,7 @@ function trocarFoto(foto) {
                 var width = this.width;
                 if (tamanho > 2097152) {
                     alert("Favor selecionar uma imagem com no máximo 2mb");
-                } else if (height * 0.9 > width * 1.1 || width * 0.9 > height * 1.1) {
+                } else if (height * 0.85 > width * 1.15 || width * 0.85 > height * 1.15) {
                     alert("Imagem selecionada com resolução incompatível.\nFavor escolher outra imagem");
                 } else {
                     $('#avatar').attr('src', e.target.result);
