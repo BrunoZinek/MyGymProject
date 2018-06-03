@@ -20,7 +20,7 @@ function verificarSessao() {
 
 function sair() {
     if (confirm("Deseja sair?")) {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
         window.localStorage.clear();
     }
 }

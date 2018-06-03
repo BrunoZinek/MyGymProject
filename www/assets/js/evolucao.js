@@ -78,7 +78,7 @@ function ordenar() {
         return a.text < b.text ? -1 : 1;
     });
     $('#dtFim').html(ordenarFim);
-    $('#dtFim option:first').attr('selected', true);
+    $('#dtFim option:eq(1)').attr('selected', true);
 
 }
 

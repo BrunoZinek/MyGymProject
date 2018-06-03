@@ -7,7 +7,7 @@ $(function () {
             recuperarFoto()
             diaSemana();
             recuperarTreinoDia();
-            $('.exibir-exec').click(exibirExec);
+            $('.exibir-exec').click(exibirExec(this));
         }
     }
 });
@@ -57,6 +57,8 @@ function recuperarFoto() {
     })
 }
 
-function exibirExec() {
-    window.location.href = "execucoes.html";
+function exibirExec(item) {
+    var treino = item.currentTarget.text;
+    window.localStorage.setItem('execucao', treino);
+    window.location.href = "execucoes.html";   
 }

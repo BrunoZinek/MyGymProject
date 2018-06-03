@@ -76,10 +76,7 @@ function exibirAulas() {
     var data = $('#dataBusca').val();
     var amd = data.split('-');
     var dataFormatada = amd[2] + '/' + amd[1] + '/' + amd[0];
-    console.log(data);
-
-
-    //window.location.href = "aulas.html";
+    window.location.href = "aulas.html";
 }
 
 function agendarAula() {

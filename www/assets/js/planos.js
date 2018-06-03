@@ -3,6 +3,7 @@ $(function () {
     verificarSessao();
     recuperarPlanos();
     recuperarValidadePlano();
+    $(".redirecPag").click(redirectPag);
 });
 
 function recuperarPlanos() {
@@ -28,7 +29,7 @@ function recuperarPlanos() {
             plano.append(preco);
             link.append(plano);
             link.click(redirectPag);
-            boxPlano.append(plano);
+            boxPlano.append(link);
         });
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
@@ -56,7 +57,7 @@ function recuperarValidadePlano() {
             var mes = '0' + mes;
         }
         var dataAtualYMD = ano + '/' + mes + '/' + dia;
-        var d = "03/05/2018";
+        var d = "02/05/2018";
         var dma = d.split("/");
         var dataContratacao = new Date(
             parseInt(dma[2], 10),
@@ -75,4 +76,10 @@ function recuperarValidadePlano() {
     }).always(function () {
         $('.box-spinner').toggle();
     })
+}
+
+function redirectPag (){
+    if(confirm("Você será direcionado para a página de pagamento.")){
+        window.open('http://www.pagseguro.com.br','_self');
+    }
 }
