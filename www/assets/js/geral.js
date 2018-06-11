@@ -25,6 +25,10 @@ function sair() {
     }
 }
 
+function logOut(){
+    window.location.href = "login.html";
+    window.localStorage.clear();
+}
 function voltar() {
     window.history.back();
 }

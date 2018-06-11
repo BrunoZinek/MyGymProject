@@ -5,7 +5,6 @@ $(function () {
         $.ajaxSetup({ timeout: 10000 });
         if (verificarSessao()) {
             recuperarFoto()
-            diaSemana();
             recuperarTreinoDia();
             $('.exibir-exec').click(exibirExec(this));
         }
@@ -19,6 +18,7 @@ function recuperarTreinoDia() {
     }
     $('.box-spinner').toggle();
     $.get('https://api.myjson.com/bins/13411b', dados, function (data) {
+        diaSemana();
         if (data.length > 0) {
             $('.treino-home').show();
             $('#treinoDia').text(data[0].grupo + ' e ' + data[1].grupo);
@@ -47,11 +47,19 @@ function recuperarTreinoDia() {
 }
 
 function recuperarFoto() {
+    var dados = {
+        login: window.localStorage.getItem('login'),
+        senha: window.localStorage.getItem('senha')
+    }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/njl4a', function (data) {
-        $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
+    $.post('http://localhost/mygym/recuperarPerfil.php', dados, function (data) {
+        if (data.autenticado == 0)
+            logOut();
+        else
+            $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data.usuario.foto);
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
+        logOut();
     }).always(function () {
         $('.box-spinner').toggle();
     })
@@ -60,5 +68,5 @@ function recuperarFoto() {
 function exibirExec(item) {
     var treino = item.currentTarget.text;
     window.localStorage.setItem('execucao', treino);
-    window.location.href = "execucoes.html";   
+    window.location.href = "execucoes.html";
 }

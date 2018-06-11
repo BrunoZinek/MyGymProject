@@ -19,38 +19,40 @@ $(function () {
 })
 
 function recuperarPerfil() {
+    var dados = {
+        login: window.localStorage.getItem('login'),
+        senha: window.localStorage.getItem('senha')
+    }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/njl4a', function (data) {
-        var dados = data[0];
-        $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + dados.foto);
-        $('#iptNome').attr('value', dados.nome);
-        $('#iptDtNasc').attr('value', dados.dtNasc);
-        $('#iptEmail').attr('value', dados.email);
-        $('#celular').attr('value', dados.celular);
-        $('#cep').attr('value', dados.cep);
-        $('#rua').attr('value', dados.rua);
-        $('#numero').attr('value', dados.numero);
-        $('#bairro').attr('value', dados.bairro);
-        $('#cidade').attr('value', dados.cidade);
-        $('#uf').attr('value', dados.uf);
-        $('#dtMatric').text(dados.dtMatric);
-        $.get('https://api.myjson.com/bins/1ffm67', function (data) {
-            var dados = data[0];
-            $('#altura').text(dados.altura);
-            $('#peso').text(dados.peso);
-            $('#imc').text(dados.imc);
-            $('#gordura').text(dados.gordura);
-            $('#biceps').text(dados.biceps);
-            $('#antebraco').text(dados.antebraco);
-            $('#peito').text(dados.peito);
-            $('#abdomen').text(dados.abdomen);
-            $('#quadril').text(dados.quadril);
-            $('#panturrilha').text(dados.panturrilha);
-            $('#coxa').text(dados.coxa);
-            $('#pescoco').text(dados.pescoco);
-        }).fail(function () {
-            alert('Sistema indisponivel. Tente novamente mais tarde!')
-        })
+    $.post('http://localhost/mygym/recuperarPerfil.php', dados, function (data) {
+        if (data.autenticado == 0)
+            logOut();
+        else {
+            $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data.usuario.foto);
+            $('#iptNome').attr('value', data.usuario.nome);
+            $('#iptDtNasc').attr('value', data.usuario.dataNascimento.split('-').reverse().join('/'));
+            $('#iptEmail').attr('value', data.usuario.email);
+            $('#celular').attr('value', data.usuario.celular);
+            $('#cep').attr('value', "0" + data.usuario.cep);
+            $('#endereco').attr('value', data.usuario.endereco);
+            $('#numero').attr('value', data.usuario.numero);
+            $('#bairro').attr('value', data.usuario.bairro);
+            $('#cidade').attr('value', data.usuario.cidade);
+            $('#estado').attr('value', data.usuario.estado);
+            $('#dtMatric').text(data.usuario.dataMatricula.split('-').reverse().join('/'));
+            $('#altura').text(data.usuario.altura);
+            $('#peso').text(data.usuario.peso);
+            $('#imc').text(data.usuario.imc);
+            $('#gordura').text(data.usuario.gordura);
+            $('#biceps').text(data.usuario.biceps);
+            $('#antebraco').text(data.usuario.antebraco);
+            $('#peito').text(data.usuario.peito);
+            $('#abdomen').text(data.usuario.abdomen);
+            $('#quadril').text(data.usuario.quadril);
+            $('#panturrilha').text(data.usuario.panturrilha);
+            $('#coxa').text(data.usuario.coxa);
+            $('#pescoco').text(data.usuario.pescoco);
+        }
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!')
     }).always(function () {

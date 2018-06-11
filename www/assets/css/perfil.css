@@ -64,12 +64,14 @@ span {
 #divCel label, #divCel input,
 #divCep label, #divCep input,
 #divBairro label, #divBairro input,
+#divEndereco label, #divEndereco input,
 #divCidade label, #divCidade input {
     display: inline !important;
 }
 
 #divCel input,
 #divCep input,
+#divEndereco input,
 #divBairro input{
     margin-top: 5px !important;
     width: 75%;
@@ -79,7 +81,7 @@ span {
     margin-left: 15px !important;
 }
 
-#numero, #uf{
+#numero, #estado{
     width: 50px !important;
 }
 

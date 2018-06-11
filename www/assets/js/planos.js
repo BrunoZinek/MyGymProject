@@ -1,6 +1,6 @@
 $(function () {
     $.ajaxSetup({ timeout: 10000 });
-    verificarSessao();
+    //verificarSessao();
     recuperarPlanos();
     recuperarValidadePlano();
     $(".redirecPag").click(redirectPag);
@@ -12,17 +12,20 @@ function recuperarPlanos() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/1b4lxb', dados, function (data) {
-        $(data).each(function (i) {
+    $.post('http://localhost/mygym/recuperarPlanos.php', dados, function (data) {
+        console.log(data);
+        
+        /*
+    $(data).each(function (i) {
             var boxPlano = $('#boxPlano');
             var link = $("<a>").addClass("redirecPag").attr("href", "#");
             var plano = $('<div>').addClass("card");
             var titulo = $('<label>');
-            var textoTitulo = $('<h4>').text(data[i].titulo);
+            var textoTitulo = $('<h4>').text(data[i].plano.titulo);
             titulo.append(textoTitulo);
-            var desc = $('<span>').text(data[i].descricao);
+            var desc = $('<span>').text(data[i].plano.descricao);
             var preco = $('<label>');
-            var textoPreco = $('<h4>').text('R$' + data[i].preco + ',00');
+            var textoPreco = $('<h4>').text('R$' + data[i].plano.preco + ',00');
             preco.append(textoPreco);
             plano.append(titulo);
             plano.append(desc);
@@ -31,7 +34,7 @@ function recuperarPlanos() {
             link.click(redirectPag);
             boxPlano.append(link);
         });
-    }).fail(function () {
+    */}).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
     }).always(function () {
         $('.box-spinner').toggle();
