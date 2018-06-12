@@ -1,5 +1,5 @@
 $(function () {
-    $.ajaxSetup({ timeout: 10000 });
+    //$.ajaxSetup({ timeout: 10000 });
     // Logar
     $('#entrar').click(logar);
 
