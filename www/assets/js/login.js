@@ -28,7 +28,7 @@ function logar() {
             senha: senha
         }
         $('.box-spinner').toggle();
-        $.post('http://10.0.2.2/mygym/logar.php', dados, function (data) {
+        $.post('http://' + window.localStorage.getItem('endereco') + '/mygym/logar.php', dados, function (data) {
             if (data.autenticado == 1) {
                 window.localStorage.setItem('login', login);
                 window.localStorage.setItem('senha', senha);
