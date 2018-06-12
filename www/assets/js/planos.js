@@ -12,7 +12,7 @@ function recuperarPlanos() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.post('http://localhost/mygym/recuperarPlanos.php', dados, function (data) {
+    $.post('http://10.0.2.2/mygym/recuperarPlanos.php', dados, function (data) {
         console.log(data);
         
         /*

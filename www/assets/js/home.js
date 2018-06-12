@@ -52,7 +52,7 @@ function recuperarFoto() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.post('http://localhost/mygym/recuperarPerfil.php', dados, function (data) {
+    $.post('http://10.0.2.2/mygym/recuperarPerfil.php', dados, function (data) {
         if (data.autenticado == 0)
             logOut();
         else
