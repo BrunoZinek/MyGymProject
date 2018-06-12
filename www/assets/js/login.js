@@ -3,6 +3,10 @@ $(function () {
     // Logar
     $('#entrar').click(logar);
     
+    $('#imgLogin').click(function(){
+        window.localStorage.setItem('endereco',prompt("Digite o endereco", ""));
+    });
+    
     if(!window.localStorage.getItem('endereco')){
         window.localStorage.setItem('endereco','localhost');
     }
