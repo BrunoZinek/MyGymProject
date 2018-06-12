@@ -2,7 +2,11 @@ $(function () {
     //$.ajaxSetup({ timeout: 10000 });
     // Logar
     $('#entrar').click(logar);
-
+    
+    if(!window.localStorage.getItem('endereco')){
+        window.localStorage.setItem('endereco','localhost');
+    }
+    
     $('#user').keypress(function (e) {
         if (e.which == 13) {
             $('#password').focus();
