@@ -4,12 +4,6 @@
 
 	if(!isset($conn)){
             echo "Erro na conexão <br>";
-        }
-
-
-        	
-	
-
-	     
+    }
 
 ?>

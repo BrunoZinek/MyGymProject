@@ -1,5 +1,6 @@
-usuario: https://api.myjson.com/bins/njl4a
-exercicios: https://api.myjson.com/bins/13411b
-planos: https://api.myjson.com/bins/1b4lxb
-aulas: https://api.myjson.com/bins/vvwu7
-evolucao https://api.myjson.com/bins/1ffm67
+Login: https://api.myjson.com/bins/10e372
+Usuario: https://api.myjson.com/bins/717cu
+Exercicios: https://api.myjson.com/bins/xvuqm
+Planos: https://api.myjson.com/bins/1b4lxb
+Aulas: https://api.myjson.com/bins/vvwu7
+Evolucao: https://api.myjson.com/bins/9jfta

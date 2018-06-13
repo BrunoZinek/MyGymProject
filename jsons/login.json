@@ -1,0 +1,20 @@
+[
+    {
+        "idLogin": "01",
+        "idUsuario": "01",
+        "login": "bpz01",
+        "senha": "1234"
+    },
+    {
+        "idLogin": "02",
+        "idUsuario": "02",
+        "login": "jpl01",
+        "senha": "1234"
+    },
+    {
+        "idLogin": "03",
+        "idUsuario": "03",
+        "login": "dr01",
+        "senha": "1234"
+    }
+]
