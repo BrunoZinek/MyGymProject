@@ -5,3 +5,7 @@ td{
 th{
     padding: 5px 10px !important;
 }
+#versao{
+    font-size: 10px;
+    text-align: center!important;
+}
