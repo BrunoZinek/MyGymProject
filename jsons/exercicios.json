@@ -1,5 +1,50 @@
 [
     {
+        "dia":"quarta-feira",
+        "grupo": "peito",
+        "treino": [
+            {
+                "titulo": "Supino Reto",
+                "serie": "3",
+                "repeticao": "15",
+                "execucao":""
+            },
+            {
+                "titulo": "Supino Inclinado",
+                "serie": "3",
+                "repeticao": "15",
+                "execucao":""
+            },
+            {
+                "titulo": "Supino Declinado",
+                "serie": "3",
+                "repeticao": "15",
+                "execucao":""
+            }
+        ]
+    },
+    {
+        "dia":"quarta-feira",
+        "grupo": "biceps",
+        "treino": [
+            {
+                "titulo": "Rosca Concentrada",
+                "serie": "3",
+                "repeticao": "10"
+            },
+            {
+                "titulo": "Rosca Alternada",
+                "serie": "3",
+                "repeticao": "10"
+            },
+            {
+                "titulo": "Rosca Barra",
+                "serie": "3",
+                "repeticao": "12"
+            }
+        ]
+    },
+    {
         "dia":"segunda-feira",
         "grupo": "perna",
         "treino": [
@@ -78,74 +123,6 @@
                 "repeticao": "12"
             }
         ]
-    },
-    {
-        "dia":"quarta-feira",
-        "grupo": "peito",
-        "treino": [
-            {
-                "titulo": "Supino Reto",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            },
-            {
-                "titulo": "Supino Inclinado",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            },
-            {
-                "titulo": "Supino Declinado",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            }
-        ]
-    },
-    {
-        "dia":"quarta-feira",
-        "grupo": "biceps",
-        "treino": [
-            {
-                "titulo": "Rosca Concentrada",
-                "serie": "3",
-                "repeticao": "10"
-            },
-            {
-                "titulo": "Rosca Alternada",
-                "serie": "3",
-                "repeticao": "10"
-            },
-            {
-                "titulo": "Rosca Barra",
-                "serie": "3",
-                "repeticao": "12"
-            }
-        ]
-    },
-    {
-        "dia":"quinta-feira",
-        "grupo": "peito",
-        "treino": [
-            {
-                "titulo": "Supino Reto",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            },
-            {
-                "titulo": "Supino Inclinado",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            },
-            {
-                "titulo": "Supino Declinado",
-                "serie": "3",
-                "repeticao": "15",
-                "execucao":""
-            }
-        ]
     }
+    
 ]

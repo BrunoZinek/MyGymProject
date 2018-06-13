@@ -4,9 +4,8 @@ $(function () {
     } else {
         $.ajaxSetup({ timeout: 10000 });
         if (verificarSessao()) {
-            recuperarFoto()
+             recuperarFoto()
             recuperarTreinoDia();
-            $('.exibir-exec').click(exibirExec(this));
         }
     }
 });
@@ -17,23 +16,25 @@ function recuperarTreinoDia() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/13411b', dados, function (data) {
-        diaSemana();
+    $.get('https://api.myjson.com/bins/18yqb2', dados, function (data) {
+        var dia = diaSemana().toLowerCase();
         if (data.length > 0) {
             $('.treino-home').show();
             $('#treinoDia').text(data[0].grupo + ' e ' + data[1].grupo);
             $('#primeiroTreinoDia').text(data[0].grupo);
             $('#segundoTreinoDia').text(data[1].grupo);
             $(data).each(function (j) {
-                var tabela = $('#tabela-exercicio' + (j + 1))
-                $(data[0].treino).each(function (i) {
-                    var linha = $('<li>');
-                    var link = $("<a>").addClass("exibir-exec").attr("href", "#");
-                    link.append(data[j].treino[i].titulo + ' - ' + data[j].treino[i].serie + ' séries - ' + data[j].treino[i].repeticao + ' repetições');
-                    link.click(exibirExec);
-                    linha.append(link);
-                    tabela.append(linha);
-                });
+                if (j < 2) {
+                    var tabela = $('#tabela-exercicio' + (j + 1))
+                    $(data[0].treino).each(function (i) {
+                        var linha = $('<li>');
+                        var link = $("<a>").addClass("exibir-exec").attr("href", "#");
+                        link.append(data[j].treino[i].titulo + ' - ' + data[j].treino[i].serie + ' séries - ' + data[j].treino[i].repeticao + ' repetições');
+                        link.click(exibirExec);
+                        linha.append(link);
+                        tabela.append(linha);
+                    });
+                }
             });
         } else {
             $('#treinoDia').text('Descanso');
@@ -47,22 +48,15 @@ function recuperarTreinoDia() {
 }
 
 function recuperarFoto() {
-    var dados = {
-        login: window.localStorage.getItem('login'),
-        senha: window.localStorage.getItem('senha')
+    var login = window.localStorage.getItem('login');
+    var image = new Image();
+    image.src = "../assets/img/faces/"+login+".jpg";
+    image.onerror = function () {
+        $('#avatar').attr('src', "../assets/img/faces/padrao.jpg");
+        }
+    image.onload = function () {
+        $('#avatar').attr('src', "../assets/img/faces/"+login+".jpg");
     }
-    $('.box-spinner').toggle();
-    $.post('http://' + window.localStorage.getItem('endereco') + '/mygym/recuperarPerfil.php', dados, function (data) {
-        if (data.autenticado == 0)
-            logOut();
-        else
-            $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data.usuario.foto);
-    }).fail(function () {
-        alert('Sistema indisponivel. Tente novamente mais tarde!');
-        logOut();
-    }).always(function () {
-        $('.box-spinner').toggle();
-    })
 }
 
 function exibirExec(item) {
