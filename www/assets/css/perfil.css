@@ -77,19 +77,20 @@ span {
     width: 75%;
 }
 
-#divCep label{
+#divCep label,
+#divEndereco label
+{
     margin-left: 15px !important;
 }
 
 #numero, #estado{
     width: 50px !important;
+    margin-right: 10px !important;
 }
 
-#bairro{
-    width: 50% !important;
-}
 #cidade{
-    width: 40% !important;
+    margin-top: 5px !important;
+    width: 45% !important;
 }
 
 #exibeMedidas{
