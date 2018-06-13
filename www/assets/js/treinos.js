@@ -33,13 +33,21 @@ function recuperarTreinoDia() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/13411b', dados, function (data) {
-        if (data.length > 0) {
+    $.get('https://api.myjson.com/bins/12y93i', dados, function (data) {
+        console.log(data);
+        
+       if (data.length > 0) {
+            var dia = 0;
             for (var i = 0; i < 7; i++) {
-                var exercicio = data[i];
-                var tabela = $('#tabela-exercicio' + (i + 1))
-                if (exercicio) {
-                    $(exercicio.treino).each(function (index, treino) {
+                
+                var tabela = $('#tabela-exercicio' +(i+1))
+                if (data[dia+1]) {
+                    $(data[dia].treino).each(function (index, treino) {
+                        var linha = $('<li>');
+                        linha.append(treino.titulo + ' - ' + treino.serie + ' séries - ' + treino.repeticao + ' repetições');
+                        tabela.append(linha);
+                    });
+                    $(data[dia+1].treino).each(function (index, treino) {
                         var linha = $('<li>');
                         linha.append(treino.titulo + ' - ' + treino.serie + ' séries - ' + treino.repeticao + ' repetições');
                         tabela.append(linha);
@@ -50,6 +58,7 @@ function recuperarTreinoDia() {
                     linha.append("Você não tem treino cadastrado para hoje. Descanse!");
                     tabela.append(linha);
                 }
+                dia +=2;
             }
         }
     }).fail(function () {
