@@ -2,5 +2,5 @@ Login: https://api.myjson.com/bins/10e372
 Usuario: https://api.myjson.com/bins/717cu
 Exercicios: https://api.myjson.com/bins/12y93i
 Planos: https://api.myjson.com/bins/1b4lxb
-Aulas: https://api.myjson.com/bins/12nr0e
+Aulas: https://api.myjson.com/bins/idapq
 Evolucao: https://api.myjson.com/bins/9jfta

@@ -12,7 +12,9 @@ function recuperarAulas() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.get('', dados, function (result) {
+    $.get('https://api.myjson.com/bins/13swhq', dados, function (result) {
+
+
         $(result).each(function (i) {
             if (window.localStorage.getItem('modalidade') != "" &&
                 window.localStorage.getItem('dataBusca') != "undefined/undefined/") {
@@ -45,8 +47,8 @@ function recuperarAulas() {
                     linha.click(agendarAula);
                     tabela.append(linha);
                 }
-                console.log($('#tabela-aulas').html());
             } else if (window.localStorage.getItem('dataBusca') != "undefined/undefined/") {
+                console.log(result);
                 if (result[i].data == window.localStorage.getItem('dataBusca')) {
                     var tabela = $('#tabela-aulas');
                     var linha = $('<tr>');
@@ -62,17 +64,17 @@ function recuperarAulas() {
                     tabela.append(linha);
                 }
             }
-            if (!$('#tabela-aulas').html()) {
-                alert("Não foram encontradas aulas com a modalidade/data informada.");
-                $("#btnConfirmar").click();
-                return false;
-            }
         });
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
         logOut();
     }).always(function () {
         $('.box-spinner').toggle();
+        if (!$('#tabela-aulas').html()) {
+            alert("Não foram encontradas aulas com a modalidade/data informada.");
+            $("#btnConfirmar").click();
+            return false;
+        }
     })
 }
 function agendarAula() {
@@ -83,7 +85,7 @@ function agendarAula() {
 
     if (confirm('Deseja agendar a aula de ' + modalidade + ' no dia ' + data + ', às ' + horario + ' com o professor ' + professor + ' ?')) {
         alert("Aula agendada com sucesso");
-        window.location.href="agenda.html"
+        window.location.href = "agenda.html"
         /*var dados = {
             login: window.localStorage.getItem('login'),
             senha: window.localStorage.getItem('senha'),

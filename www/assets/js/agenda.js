@@ -15,7 +15,7 @@ function recuperaModalidades() {
     // Busca Modalidades
     $('#slcModalidade').append('<option></option>');
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/vvwu7', dados, function (data) {
+    $.get('https://api.myjson.com/bins/idapq', dados, function (data) {
         $(data).each(function (i) {
             var modalidades = $('#slcModalidade');
             var opcao = $('<option>').attr('value', i + 1).text(data[i].modalidade);
