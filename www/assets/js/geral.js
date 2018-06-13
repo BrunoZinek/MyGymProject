@@ -56,9 +56,6 @@ function exibirEvol() {
     $("#divEvol").slideToggle();
 }
 
-function exibirAulas() {
-    window.open("aulas.html", "_self")
-}
 function redirectPag() {
     if (confirm("Você será direcionado para a página de pagamento")) {
         window.location.href = "index.html";

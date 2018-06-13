@@ -49,9 +49,7 @@ function buscarEvolucao() {
 
 function buscarDatas() {
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/9jfta', function (data) {
-        console.log(data[0].dataAfericao);
-        
+    $.get('https://api.myjson.com/bins/9jfta', function (data) {        
         $(data).each(function (i) {
             var select = $('#dtInicio,#dtFim');
             var item = $('<option>');
