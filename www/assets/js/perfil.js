@@ -23,36 +23,46 @@ function recuperarPerfil() {
         login: window.localStorage.getItem('login'),
         senha: window.localStorage.getItem('senha')
     }
-    $('.box-spinner').toggle();
-    $.post('http://10.0.2.2/mygym/recuperarPerfil.php', dados, function (data) {
-        if (data.autenticado == 0)
-            logOut();
-        else {
-            $('#avatar').attr('src', 'data:image/png;charset=utf-8;base64,' + data.usuario.foto);
-            $('#iptNome').attr('value', data.usuario.nome);
-            $('#iptDtNasc').attr('value', data.usuario.dataNascimento.split('-').reverse().join('/'));
-            $('#iptEmail').attr('value', data.usuario.email);
-            $('#celular').attr('value', data.usuario.celular);
-            $('#cep').attr('value', "0" + data.usuario.cep);
-            $('#endereco').attr('value', data.usuario.endereco);
-            $('#numero').attr('value', data.usuario.numero);
-            $('#bairro').attr('value', data.usuario.bairro);
-            $('#cidade').attr('value', data.usuario.cidade);
-            $('#estado').attr('value', data.usuario.estado);
-            $('#dtMatric').text(data.usuario.dataMatricula.split('-').reverse().join('/'));
-            $('#altura').text(data.usuario.altura);
-            $('#peso').text(data.usuario.peso);
-            $('#imc').text(data.usuario.imc);
-            $('#gordura').text(data.usuario.gordura);
-            $('#biceps').text(data.usuario.biceps);
-            $('#antebraco').text(data.usuario.antebraco);
-            $('#peito').text(data.usuario.peito);
-            $('#abdomen').text(data.usuario.abdomen);
-            $('#quadril').text(data.usuario.quadril);
-            $('#panturrilha').text(data.usuario.panturrilha);
-            $('#coxa').text(data.usuario.coxa);
-            $('#pescoco').text(data.usuario.pescoco);
+    var login = window.localStorage.getItem('login');
+    var image = new Image();
+    image.src = "../assets/img/faces/"+login+".jpg";
+    image.onerror = function () {
+        $('#avatar').attr('src', "../assets/img/faces/padrao.jpg");
         }
+    image.onload = function () {
+        $('#avatar').attr('src', "../assets/img/faces/"+login+".jpg");
+    }
+    $('.box-spinner').toggle();
+    $.get('https://api.myjson.com/bins/717cu', dados, function (data) {      
+        $('#iptNome').attr('value', data[0].usuario[0].nome);
+        $('#iptDtNasc').attr('value', data[0].usuario[0].dtNasc.split('-').reverse().join('/'));
+        $('#iptEmail').attr('value', data[0].usuario[0].email);
+        $('#celular').attr('value', data[0].usuario[0].celular);
+        $('#cep').attr('value', "0" + data[0].usuario[0].cep);
+        $('#endereco').attr('value', data[0].usuario[0].endereco);
+        $('#numero').attr('value', data[0].usuario[0].numero);
+        $('#bairro').attr('value', data[0].usuario[0].bairro);
+        $('#cidade').attr('value', data[0].usuario[0].cidade);
+        $('#estado').attr('value', data[0].usuario[0].estado);
+        $('#dtMatric').text(data[0].usuario[0].dtMatric.split('-').reverse().join('/'));
+        $.get('https://api.myjson.com/bins/9jfta', dados, function (data) {
+            console.log(data[0].abdomen);
+            
+            $('#abdomen').text(data[0].abdomen);
+            $('#altura').text(data[0].altura);
+            $('#antebraco').text(data[0].antebraco);
+            $('#biceps').text(data[0].biceps);
+            $('#coxa').text(data[0].coxa);
+            $('#gordura').text(data[0].gordura);
+            $('#imc').text(data[0].imc);
+            $('#panturrilha').text(data[0].panturrilha);
+            $('#peito').text(data[0].peito);
+            $('#pescoco').text(data[0].pescoco);
+            $('#peso').text(data[0].peso);
+            $('#quadril').text(data[0].quadril);
+        }).fail(function () {
+            alert('Sistema indisponivel. Tente novamente mais tarde!')
+        });
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!')
     }).always(function () {
@@ -72,6 +82,8 @@ function editarPerfil() {
     $("#iptEmail").prop("disabled", false);
     $("#cep").prop("disabled", false);
     $("#cep").removeClass('disabled');
+    $("#endereco").prop("disabled", false);
+    $("#endereco").removeClass('disabled');
     $("#celular").prop("disabled", false);
     $("#celular").removeClass('disabled');
     $("#numero").prop("disabled", false);
@@ -81,7 +93,7 @@ function editarPerfil() {
 }
 
 function salvarPerfil() {
-    $('.box-spinner').toggle();
+    /*$('.box-spinner').toggle();
     var dados = {
         nome: $("#iptNome").val(),
         dtNasc: $("#iptDtNasc").val(),
@@ -103,13 +115,30 @@ function salvarPerfil() {
         alert('Sistema indisponível. Tente novamente mais tarde');
     }).always(function () {
         $('.box-spinner').toggle();
-    })
+    })*/
+    
+    $('#iptNome').addClass('disabled');
     $("#iptNome").prop("disabled", true);
+    $('#iptDtNasc').addClass('disabled');
     $("#iptDtNasc").prop("disabled", true);
+    $('#iptEmail').addClass('disabled');
+    $("#btnUpload").css("opacity", '0');
+    $("#upload").prop("disabled", true);
     $("#iptEmail").prop("disabled", true);
+    $("#cep").prop("disabled", true);
+    $("#cep").addClass('disabled');
+    $("#endereco").prop("disabled", true);
+    $("#endereco").addClass('disabled');
+    $("#celular").prop("disabled", true);
+    $("#celular").addClass('disabled');
+    $("#numero").prop("disabled", true);
+    $("#numero").addClass('disabled');
     $("#btnSalvar").hide();
+    $("#camera").hide();
     $("#btnEditar").show();
+    alert('Dados alterados com sucesso');
 }
+
 function trocarFoto(foto) {
     if (foto && foto[0]) {
         var reader = new FileReader();
@@ -150,10 +179,10 @@ function buscaEndereco() {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
-                        $("#rua").val(dados.logradouro);
+                        $("#endereco").val(dados.logradouro);
                         $("#bairro").val(dados.bairro);
                         $("#cidade").val(dados.localidade);
-                        $("#uf").val(dados.uf);
+                        $("#estado").val(dados.uf);
                     } //end if.
                     else {
                         //CEP pesquisado não foi encontrado.
