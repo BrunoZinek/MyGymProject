@@ -12,7 +12,7 @@ function buscarEvolucao() {
     } else {
         // Buscando Medidas Iniciais e Finais
         $('.box-spinner').toggle();
-        $.get('https://api.myjson.com/bins/1ffm67', function (data) {
+        $.get('https://api.myjson.com/bins/9jfta', function (data) {
             $('#inicial1').append(data[0].altura);
             $('#inicial2').append(data[0].peso);
             $('#inicial3').append(data[0].imc);
@@ -49,11 +49,13 @@ function buscarEvolucao() {
 
 function buscarDatas() {
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/1ffm67', function (data) {
+    $.get('https://api.myjson.com/bins/9jfta', function (data) {
+        console.log(data[0].dataAfericao);
+        
         $(data).each(function (i) {
             var select = $('#dtInicio,#dtFim');
             var item = $('<option>');
-            var dataAfericao = data[i].data_afericao;
+            var dataAfericao = data[i].dataAfericao;
             item.text(dataAfericao);
             select.prepend(item);
         })
