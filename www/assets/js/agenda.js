@@ -23,6 +23,7 @@ function recuperaModalidades() {
         });
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
+        logOut();
     }).always(function () {
         $('.box-spinner').toggle();
     })

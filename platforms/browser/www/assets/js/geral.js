@@ -12,7 +12,7 @@ $(function () {
 function verificarSessao() {
     if (!window.localStorage.getItem('login')) {
         alert("Você precisa estar logado.");
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 }
 
@@ -40,7 +40,8 @@ function recuperarSenha() {
                 alert("Login não cadastrado");
         })
             .fail(function () {
-                alert("Sistema indisponivel. Tente novamente mais tarde!")
+                alert("Sistema indisponivel. Tente novamente mais tarde!");
+                logOut();
             })
             .always(function () {
                 $('.box-spinner').toggle();
@@ -62,8 +63,10 @@ function diaSemana() {
     $('#diaSemana').text(semana[dia]);
     return semana[dia];
 }
-
-
+function logOut() {
+    window.localStorage.clear();
+    window.location.href = "login.html";
+}
 
 
 function exibirEvol() {

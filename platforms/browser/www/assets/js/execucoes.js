@@ -11,7 +11,8 @@ function recuperarExec() {
         $('#execucao').attr('src', 'data:image/png;charset=utf-8;base64,' + data[0].foto);
     })
     .fail(function(){
-    	alert('Sistema indisponível');
+        alert('Sistema indisponível. Tente novamente mais tarde!');
+        logOut();
     })
     .always(function(){
     	$('.box-spinner').toggle(); 

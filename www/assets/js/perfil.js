@@ -61,10 +61,12 @@ function recuperarPerfil() {
             $('#peso').text(data[0].peso);
             $('#quadril').text(data[0].quadril);
         }).fail(function () {
-            alert('Sistema indisponivel. Tente novamente mais tarde!')
+            alert('Sistema indisponivel. Tente novamente mais tarde!');
+            logOut();
         });
     }).fail(function () {
-        alert('Sistema indisponivel. Tente novamente mais tarde!')
+        alert('Sistema indisponivel. Tente novamente mais tarde!');
+        logOut();
     }).always(function () {
         $('.box-spinner').toggle();
     })

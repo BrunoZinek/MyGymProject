@@ -14,9 +14,6 @@ function alterarSenha() {
     var senhaAntiga = $('#senhaAntiga').val();
     var senhaNova = $('#senhaNova').val();
     var confirmaSenha = $('#confirmaSenha').val();
-    console.log(senhaAntiga);
-    console.log(senhaNova);
-    console.log(confirmaSenha);
     if (!senhaAntiga) {
         alert('Favor digitar a senha antiga.');
     } else if (!senhaNova) {
@@ -43,6 +40,7 @@ function alterarSenha() {
         })
             .fail(function () {
                 alert('Sistema indisponivel. Tente novamente mais tarde!');
+                logOut();
             })
             .always(function () {
                 $('.box-spinner').toggle();

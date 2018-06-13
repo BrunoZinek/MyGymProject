@@ -39,6 +39,7 @@ function buscarEvolucao() {
             $('#final12').append(data[1].pescoco);
         }).fail(function () {
             alert('Sistema indisponivel. Tente novamente mais tarde!');
+            logOut();
         }).always(function () {
             $('.box-spinner').toggle();
         })
@@ -59,6 +60,7 @@ function buscarDatas() {
         })
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
+        logOut();
     }).always(function () {
         $('.box-spinner').toggle();
         ordenar();

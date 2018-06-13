@@ -53,6 +53,7 @@ function logar() {
                 alert("Login ou senha incorreto!");
         }).fail(function () {
             alert("Sistema indisponivel. Tente novamente mais tarde!");
+            logOut();
         }).always(function () {
             $('.box-spinner').toggle();
         })
@@ -91,6 +92,7 @@ function recuperarSenha() {
                 }*/
             }).fail(function () {
                 alert("Sistema indisponivel. Tente novamente mais tarde!");
+                logOut();
             }).always(function () {
                 $('.box-spinner').toggle();
             })

@@ -12,7 +12,7 @@ function recuperarAulas() {
         senha: window.localStorage.getItem('senha')
     }
     $('.box-spinner').toggle();
-    $.get('https://api.myjson.com/bins/12nr0e', dados, function (result) {
+    $.get('', dados, function (result) {
         $(result).each(function (i) {
             if (window.localStorage.getItem('modalidade') != "" &&
                 window.localStorage.getItem('dataBusca') != "undefined/undefined/") {
@@ -70,6 +70,7 @@ function recuperarAulas() {
         });
     }).fail(function () {
         alert('Sistema indisponivel. Tente novamente mais tarde!');
+        logOut();
     }).always(function () {
         $('.box-spinner').toggle();
     })
@@ -81,7 +82,9 @@ function agendarAula() {
     var professor = $(this).find('#professor').text();
 
     if (confirm('Deseja agendar a aula de ' + modalidade + ' no dia ' + data + ', às ' + horario + ' com o professor ' + professor + ' ?')) {
-        var dados = {
+        alert("Aula agendada com sucesso");
+        window.location.href="agenda.html"
+        /*var dados = {
             login: window.localStorage.getItem('login'),
             senha: window.localStorage.getItem('senha'),
             data: data,
@@ -89,7 +92,7 @@ function agendarAula() {
             horario: horario,
             professor: professor
         }
-        /*
+        
         $('.box-spinner').toggle();
         .post('url',dados,function(result){
             if(result==1){
@@ -104,7 +107,6 @@ function agendarAula() {
             $('.box-spinner').toggle();
         })
         */
-        home();
     }
 
 }
